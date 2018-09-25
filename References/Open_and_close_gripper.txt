@@ -1,0 +1,2 @@
+rq_release_open(255) # open gripper
+rq_close_and_wait() # close gripper
