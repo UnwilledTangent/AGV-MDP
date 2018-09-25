@@ -48,3 +48,7 @@ Connect_To_PLB()
 		#open gripper 
 		#move to home position
 		zlist.remove(pos3[2])
+		
+		#added random code so as to mess up
+		oiwhgohewoihiowqh
+		hgwoigheiwo
