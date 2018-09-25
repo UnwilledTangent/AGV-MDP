@@ -48,5 +48,3 @@ Connect_To_PLB()
 		#open gripper 
 		#move to home position
 		zlist.remove(pos3[2])
-
-# test local changes
