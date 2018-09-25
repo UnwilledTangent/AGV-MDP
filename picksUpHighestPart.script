@@ -1,0 +1,50 @@
+Connect_To_PLB()
+  #PerformAlignment()
+  SetState(1,"Job")
+  Trigger(1)
+  LocateBin("Job")
+  partData1=LocatePart("Nut")
+  pos1=extractPose(partData1)
+  partData2=LocatePart("Conrod")
+  pos2=extractPose(partData2)
+  partData3=LocatePart("TopFrame")
+  pos3=extractPose(partData3)
+  zlist=[pos1[2],pos2[2],pos3[2]]
+  zlist.sort()
+  for x (0,3);
+	if zlist[-1]==pos1[2] #Compare data to see if matches
+		pos=pos1 #Substitute the variable pos
+		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+		#open gripper
+		movep(pos)
+		#close gripper
+		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+		#move to home position
+		#move to box 1
+		#open gripper 
+		#move back to home position
+		zlist.remove(pos1[2]])			#remove the largest number from list
+	elif zlist[-1]==pos2[2]
+		pos=pos2
+		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+		#open gripper
+		movep(pos)
+		#close gripper
+		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+		#move to home position
+		#move to box 2
+		#open gripper 
+		#move to home position
+		zlist.remove(pos2[2])
+	elif zlist[-1]==pos3[2]
+		pos=pos3 
+		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+		#open gripper
+		movep(pos)
+		#close gripper
+		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+		#move to home position
+		#move to box 3
+		#open gripper 
+		#move to home position
+		zlist.remove(pos3[2])
