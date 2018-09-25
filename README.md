@@ -3,6 +3,9 @@ SP's Iconic Project. This is the code repository for the Autonomous Guidance Veh
 
 ## Team Members
 Mok Jia Luo
+
 Eudora Shi
+
 Jackie Soh
+
 Sean Tin
