@@ -9,3 +9,5 @@ SP's Iconic Project. This is the code repository for the Autonomous Guidance Veh
 * Dr Carlos
 * Mr Ock Jin
 * Mr Ong Hock San
+## License
+[MIT](./LICENSE)
