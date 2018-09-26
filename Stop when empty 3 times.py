@@ -5,11 +5,11 @@ def main():
   def Connect_To_PLB(): #Function to establish socket connection with PLB
     Connected = False
     counter=0
-    while not Connected and (counter<100):
-      Connected=socket_open("192.168.0.222",6008,"Sick_Socket")
+    while not Connected and (counter<5):
+      Connected=socket_open("192.168.0.5",6008,"Sick_Socket")
       counter=counter+1
     end
-    if counter>=100:
+    if counter>=5:
       popup("Connection to PLB failed","Time out",False,True,blocking=True)
       halt
     else:
@@ -393,7 +393,8 @@ def main():
     end	  
   end   
   
-Connect_To_PLB()
+  Connect_To_PLB()
+  rq_activate()
   PerformAlignment()
   SetState(1,"Nut")
   scancounter=0
@@ -418,43 +419,60 @@ Connect_To_PLB()
 			zlist.remove(pos1[2]])			#remove the largest number from list
 			pos=pos1							#Substitute the variable pos
 			movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-			#open gripper
+			#Open gripper
+			rq_open_and_wait()
 			movep(pos)
-			#close gripper
+			#Close gripper
+			rq_close_and_wait()
 			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
 			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
 			#move to box 1
-			#open gripper 
+			popup("Moving to Box 1","Note",False,False,blocking=True)
+			#Open gripper
+			rq_open_and_wait()
 			#move back to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
 			
 		elif zlist[-1]==pos2[2]:
 			scancounter=0
 			pos=pos2
 			zlist.remove(pos2[2])
 			movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-			#open gripper
+			#Open gripper
+			rq_open_and_wait()
 			movep(pos)
-			#close gripper
+			#Close gripper
+			rq_close_and_wait()
 			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-			#move to home  position
-			#move to box2
-			#open gripper 
 			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+			#move to box2
+			popup("Moving to Box 2","Note",False,False,blocking=True)
+			#Open gripper
+			rq_open_and_wait() 
+			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
 			
 		elif zlist[-1]==pos3[2]:
 			scancounter=0
 			pos=pos3 
 			zlist.remove(pos3[2])
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-			#open gripper
+			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+			#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+			#Open gripper
+			rq_open_and_wait()
 			movep(pos)
-			#close gripper
+			#Close gripper
+			rq_close_and_wait()
 			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
 			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
 			#move to box 3
-			#open gripper 
+			popup("Moving to Box 3","Note",False,False,blocking=True)
+			#Open gripper
+			rq_open_and_wait() 
 			#move to home position
-		
-
+			popup("Moving to Home Position","Note",False,False,blocking=True)
 	end
 	main() 
