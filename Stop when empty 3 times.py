@@ -419,40 +419,72 @@ def main():
 			zlist.remove(pos1[2]])			#remove the largest number from list
 			pos=pos1							#Substitute the variable pos
 			movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-			#Open gripper
+			##Open gripper
 			rq_open_and_wait()
 			movep(pos)
-			#Close gripper
+			##Close gripper
 			rq_close_and_wait()
 			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-			#move to home position
+			##move to home position of UR5
 			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#move to box 1
+			#waypoint 4
+			movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
+			##move to box 1
 			popup("Moving to Box 1","Note",False,False,blocking=True)
-			#Open gripper
+			#middle_pos
+			movej(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+			#waypoint 24
+			movej(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
+			#scanning
+			movej(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
+			#waypoint 6
+			movej(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+			#lower_into_box
+			movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
+			##Open gripper of UR5
 			rq_open_and_wait()
-			#move back to home position
+			##move to home position of UR5
 			popup("Moving to Home Position","Note",False,False,blocking=True)
+			#waypoint 6
+			movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+			#middle_pos
+			movej(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
 			
 		elif zlist[-1]==pos2[2]:
 			scancounter=0
 			pos=pos2
 			zlist.remove(pos2[2])
 			movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-			#Open gripper
+			##Open gripper
 			rq_open_and_wait()
 			movep(pos)
-			#Close gripper
+			##Close gripper
 			rq_close_and_wait()
 			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-			#move to home position
+			##move to home position of UR5
 			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#move to box2
+			#waypoint 4
+			movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
+			##move to box 2
 			popup("Moving to Box 2","Note",False,False,blocking=True)
-			#Open gripper
-			rq_open_and_wait() 
-			#move to home position
+			#middle_pos
+			movej(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+			#waypoint 24
+			movej(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
+			#scanning
+			movej(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
+			#waypoint 6
+			movej(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+			#lower_into_box
+			movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
+			##Open gripper of UR5
+			rq_open_and_wait()
+			##move to home position of UR5
 			popup("Moving to Home Position","Note",False,False,blocking=True)
+			#waypoint 6
+			movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+			#middle_pos
+			movej(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
 			
 		elif zlist[-1]==pos3[2]:
 			scancounter=0
@@ -460,19 +492,35 @@ def main():
 			zlist.remove(pos3[2])
 			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
 			#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-			#Open gripper
+			##Open gripper
 			rq_open_and_wait()
 			movep(pos)
-			#Close gripper
+			##Close gripper
 			rq_close_and_wait()
 			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-			#move to home position
+			##move to home position of UR5
 			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#move to box 3
+			#waypoint 4
+			movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
+			##move to box 3
 			popup("Moving to Box 3","Note",False,False,blocking=True)
-			#Open gripper
-			rq_open_and_wait() 
-			#move to home position
+			#middle_pos
+			movej(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+			#waypoint 24
+			movej(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
+			#scanning
+			movej(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
+			#waypoint 6
+			movej(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+			#lower_into_box
+			movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
+			##Open gripper of UR5
+			rq_open_and_wait()
+			##move to home position of UR5
 			popup("Moving to Home Position","Note",False,False,blocking=True)
+			#waypoint 6
+			movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+			#middle_pos
+			movej(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
 	end
 	main() 
