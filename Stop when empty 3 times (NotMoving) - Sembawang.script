@@ -117,8 +117,9 @@ def main():
       popup("Expected Part message,Received Wrong type")     
     end
     
-	if receivedPartMsg[2]==111 and receivedPartMsg[2]==112 and receivedPartMsg[2]==113 and receivedPartMsg[2]==114:
-		receivedPartMsg=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+	if receivedPartMsg[2]==111 or receivedPartMsg[2]==112 or receivedPartMsg[2]==113 or receivedPartMsg[2]==114:
+		popup("Part obstructed","Note",False,False,blocking=False)
+		#receivedPartMsg=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 		
 	elif receivedPartMsg[2]!=0 and receivedPartMsg[2]!=3 and receivedPartMsg[2]!=111 and receivedPartMsg[2]!=112 and receivedPartMsg[2]!=113 and receivedPartMsg[2]!=114: #if result not OK and not a license error
       errorHandler(receivedPartMsg[1])
@@ -329,7 +330,7 @@ def main():
     verticalCorrection=extractFromList(partData,16,6)
     finalPose=calculateFinalPose(partFrame,relativeToolFrame,verticalCorrection)
    
-    return 
+    return finalPose
 	
 	
 	
@@ -390,89 +391,82 @@ def main():
       popup("PLB error 136:Too much scaling")	 
     elif errorNumber==137:
       popup("PLB error 137:Invalid Z axis direction")
-    end	  
-  end   
+	end
+  end
+  
+  def zListSort(x):
+	if x[0] > x[1]:
+	  x=[x[1],x[0]]
+	end
+	
+	return x
+  end
   
   Connect_To_PLB()
-  rq_activate()
-  PerformAlignment()
+  #rq_activate()
+  #PerformAlignment()
   SetState(1,"Nut")
-  scancounter=0
-  While scancounter<3:
 	  Trigger(1)
-	  LocateBin("Job")
-	  partData1=LocatePart("Nut")
+	  LocateBin("Nut")
+	  partData1=LocatePart("Conrod")
 	  pos1=extractPose(partData1)
-	  partData2=LocatePart("Conrod")
+	  partData2=LocatePart("Nut")
 	  pos2=extractPose(partData2)
-	  partData3=LocatePart("TopFrame")
-	  pos3=extractPose(partData3)
-	  zlist=[pos1[2],pos2[2],pos3[2]]
-	  zlist.sort()
-	  for x (0,len(zlist):
-		if zlist[-1]==0
-			scancounter+=1
-			break
-		
-		elif zlist[-1]==pos1[2]:				#Compare data to see if matches
-			scancounter=0
-			zlist.remove(pos1[2]])			#remove the largest number from list
+	  popup("Stuff0","title",False,False,blocking=True)
+	  zlist=[pos1[2],pos2[2]]
+	  popup("Stuff1","title",False,False,blocking=True)
+	  zlist = zListSort(zlist)
+	  popup("Stuff2","title",False,False,blocking=True)
+      x=0
+	  while x<2:
+		if zlist[-1]==pos1[2]:				#Compare data to see if matches
+			zlist.remove(pos1[2])			#remove the largest number from list
 			pos=pos1							#Substitute the variable pos
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+			#Move above the item
+			popup("Gripper above the item","Note",False,False,blocking=True)
 			#Open gripper
-			rq_open_and_wait()
-			movep(pos)
+			popup("Open gripper","Note",False,False,blocking=True)
+			#Move to item
+			popup("Gripper moved to item","Note",False,False,blocking=True)
 			#Close gripper
-			rq_close_and_wait()
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+			popup("Close gripper","Note",False,False,blocking=True)
+			#Move gripper up
+			popup("Gripper moved up","Note",False,False,blocking=True)
 			#move to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
 			#move to box 1
 			popup("Moving to Box 1","Note",False,False,blocking=True)
 			#Open gripper
-			rq_open_and_wait()
+			popup("Open gripper","Note",False,False,blocking=True)
 			#move back to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
 			
 		elif zlist[-1]==pos2[2]:
-			scancounter=0
 			pos=pos2
 			zlist.remove(pos2[2])
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+			#Move above the item
+			popup("Gripper above the item","Note",False,False,blocking=True)
 			#Open gripper
-			rq_open_and_wait()
-			movep(pos)
+			popup("Open gripper","Note",False,False,blocking=True)
+			#Move to item
+			popup("Gripper moved to item","Note",False,False,blocking=True)
 			#Close gripper
-			rq_close_and_wait()
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+			popup("Close gripper","Note",False,False,blocking=True)
+			#Move gripper up
+			popup("Gripper moved up","Note",False,False,blocking=True)
 			#move to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#move to box2
+			#move to box 2
 			popup("Moving to Box 2","Note",False,False,blocking=True)
 			#Open gripper
-			rq_open_and_wait() 
+			popup("Open gripper","Note",False,False,blocking=True)
 			#move to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
 			
-		elif zlist[-1]==pos3[2]:
-			scancounter=0
-			pos=pos3 
-			zlist.remove(pos3[2])
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-			#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-			#Open gripper
-			rq_open_and_wait()
-			movep(pos)
-			#Close gripper
-			rq_close_and_wait()
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-			#move to home position
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#move to box 3
-			popup("Moving to Box 3","Note",False,False,blocking=True)
-			#Open gripper
-			rq_open_and_wait() 
-			#move to home position
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-	end
-	main() 
+	    end
+		x=x+1
+	  end
+	
+end
+
+main() 
