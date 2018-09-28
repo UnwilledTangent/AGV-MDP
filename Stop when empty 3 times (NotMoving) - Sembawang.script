@@ -431,7 +431,9 @@ def main():
 	  x=0
 	  popup("Stuff3","title",False,False,blocking=True)
 	  while (x<3):
+	    popup("Stuff4","title",False,False,blocking=True)
 		if zlist[0]==pos1[2]:				#Compare data to see if matches
+			popup("Stuff5","title",False,False,blocking=True)
 			zlist.remove(pos1[2])			#remove the largest number from list
 			pos=pos1							#Substitute the variable pos
 			#Move above the item
@@ -453,6 +455,7 @@ def main():
 			#move back to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
 		elif zlist[0]==pos2[2]:
+			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos2
 			zlist.remove(pos2[2])
 			#Move above the item
@@ -474,6 +477,7 @@ def main():
 			#move to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
 		elif zlist[0]==pos3[2]:
+			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos3 
 			zlist.remove(pos3[2])
 			#Move above the item
