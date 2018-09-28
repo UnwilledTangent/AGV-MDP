@@ -428,7 +428,8 @@ def main():
 	  popup("Stuff1","title",False,False,blocking=True)
 	  zlist = zListSort(zlist)
 	  popup("Stuff2","title",False,False,blocking=True)
-      x=0
+	  x=0
+	  popup("Stuff3","title",False,False,blocking=True)
 	  while x<3:
 		if zlist[0]==pos1[2]:				#Compare data to see if matches
 			zlist.remove(pos1[2])			#remove the largest number from list
