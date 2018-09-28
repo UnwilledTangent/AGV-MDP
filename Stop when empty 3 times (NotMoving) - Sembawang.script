@@ -434,8 +434,10 @@ def main():
 	    popup("Stuff4","title",False,False,blocking=True)
 		if zlist[0]==pos1[2]:				#Compare data to see if matches
 			popup("Stuff5","title",False,False,blocking=True)
-			zlist.remove(pos1[2])			#remove the largest number from list
 			pos=pos1							#Substitute the variable pos
+			popup("Stuff6","title",False,False,blocking=True)
+			zlist.remove(pos1[2])			#remove the largest number from list
+			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
 			#Open gripper
@@ -457,7 +459,9 @@ def main():
 		elif zlist[0]==pos2[2]:
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos2
+			popup("Stuff6","title",False,False,blocking=True)
 			zlist.remove(pos2[2])
+			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
 			#Open gripper
@@ -478,8 +482,10 @@ def main():
 			popup("Moving to Home Position","Note",False,False,blocking=True)
 		elif zlist[0]==pos3[2]:
 			popup("Stuff5","title",False,False,blocking=True)
-			pos=pos3 
+			pos=pos3
+			popup("Stuff6","title",False,False,blocking=True)
 			zlist.remove(pos3[2])
+			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
 			#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
