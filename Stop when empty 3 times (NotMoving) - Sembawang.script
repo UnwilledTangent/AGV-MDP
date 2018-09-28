@@ -430,7 +430,7 @@ def main():
 	  popup("Stuff2","title",False,False,blocking=True)
 	  x=0
 	  popup("Stuff3","title",False,False,blocking=True)
-	  while x<3:
+	  while (x<3):
 		if zlist[0]==pos1[2]:				#Compare data to see if matches
 			zlist.remove(pos1[2])			#remove the largest number from list
 			pos=pos1							#Substitute the variable pos
@@ -452,7 +452,6 @@ def main():
 			popup("Open gripper","Note",False,False,blocking=True)
 			#move back to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
-			
 		elif zlist[0]==pos2[2]:
 			pos=pos2
 			zlist.remove(pos2[2])
@@ -474,7 +473,6 @@ def main():
 			popup("Open gripper","Note",False,False,blocking=True)
 			#move to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
-			
 		elif zlist[0]==pos3[2]:
 			pos=pos3 
 			zlist.remove(pos3[2])
@@ -497,7 +495,7 @@ def main():
 			popup("Open gripper","Note",False,False,blocking=True)
 			#move to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
-	    end
+		end
 		x=x+1
 	  end
 	
