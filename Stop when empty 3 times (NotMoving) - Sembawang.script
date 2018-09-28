@@ -436,7 +436,7 @@ def main():
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos1							#Substitute the variable pos
 			popup("Stuff6","title",False,False,blocking=True)
-			zlist.remove(pos1[2])			#remove the largest number from list
+			zlist.pop(0)			#remove the first number, which is the largest number, from the list
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
@@ -460,7 +460,7 @@ def main():
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos2
 			popup("Stuff6","title",False,False,blocking=True)
-			zlist.remove(pos2[2])
+			zlist.pop(0)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
@@ -484,7 +484,7 @@ def main():
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos3
 			popup("Stuff6","title",False,False,blocking=True)
-			zlist.remove(pos3[2])
+			zlist.pop(0)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
