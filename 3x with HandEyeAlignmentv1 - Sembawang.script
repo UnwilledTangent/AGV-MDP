@@ -226,7 +226,7 @@ def main():
     AddAlignmentPoint(vec4)
 	popup("Alignment Position 1|2","Title",False,False,blocking=True)
 
-	movel(p[0.140,0.625,0.325,4.665,0.0125,0.3037]], a=1.2, v=0.25, r=0)
+	movel(p[0.140,0.625,0.325,4.665,0.0125,0.3037], a=1.2, v=0.25, r=0)
 	Trigger(5) 
 	vec5=extractPosVect()
     AddAlignmentPoint(vec5)
