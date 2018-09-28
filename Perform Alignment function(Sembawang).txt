@@ -1,0 +1,55 @@
+  def PerformAlignment(): #Function to perform a PLB HEA procedure (adapt robot positions to your environment!)
+    movel(p[0.02,0.530,0.250,4.6062,0.4541,-0.0883], a=1.2, v=0.25, r=0)
+	Trigger(1) #First Image
+    vec1=extractPosVect() #store position vector
+    AddAlignmentPoint(vec1) #Add alignment point to PLBs HEA procedure
+	popup("Alignment Position 1|1","Title",False,False,blocking=True)
+
+	movel(p[0.140,0.625,0.25,4.665,0.0125,0.3037], a=1.2, v=0.25, r=0)
+	Trigger(2)
+    vec2=extractPosVect()
+    AddAlignmentPoint(vec2)
+	popup("Alignment Position 2|1","Title",False,False,blocking=True)
+
+	movel(p[0.325,0.590,0.250,4.5079,-0.6099,0.9055], a=1.2, v=0.25, r=0)
+	Trigger(3)   
+    vec3=extractPosVect()
+    AddAlignmentPoint(vec3)
+	popup("Alignment Position 3|1","Title",False,False,blocking=True)
+
+	movel(p[0.02,0.530,0.325,4.6062,0.4541,-0.0883], a=1.2, v=0.25, r=0)
+	Trigger(4)   
+    vec4=extractPosVect()
+    AddAlignmentPoint(vec4)
+	popup("Alignment Position 1|2","Title",False,False,blocking=True)
+
+	movel(p[0.140,0.625,0.325,4.665,0.0125,0.3037]], a=1.2, v=0.25, r=0)
+	Trigger(5) 
+	vec5=extractPosVect()
+    AddAlignmentPoint(vec5)
+	popup("Alignment Position 2|2","Title",False,False,blocking=True)
+
+	movel(p[0.325,0.590,0.325,4.5079,-0.6099,0.9055], a=1.2, v=0.25, r=0)
+	Trigger(6)   
+    vec6=extractPosVect()
+    AddAlignmentPoint(vec6)
+	popup("Alignment Position 3|2","Title",False,False,blocking=True)
+
+	movel(p[0.02,0.530,0.400,4.6062,0.4541,-0.0883], a=1.2, v=0.25, r=0)
+	Trigger(7)   
+    vec7=extractPosVect()
+    AddAlignmentPoint(vec7)
+	popup("Alignment Position 1|3","Title",False,False,blocking=True)
+
+	movel(p[0.140,0.625,0.400,4.665,0.0125,0.3037]], a=1.2, v=0.25, r=0)
+	Trigger(8)   
+    vec8=extractPosVect()
+    AddAlignmentPoint(vec8)
+	popup("Alignment Position 2|3","Title",False,False,blocking=True)
+
+	movel(p[0.325,0.590,0.400,4.5079,-0.6099,0.9055], a=1.2, v=0.25, r=0)
+	Trigger(9)   
+    vec9=extractPosVect()
+    AddAlignmentPoint(vec9)
+	popup("Alignment Position 3|3","Title",False,False,blocking=True)
+  end
