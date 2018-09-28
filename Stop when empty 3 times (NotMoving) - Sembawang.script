@@ -415,6 +415,7 @@ def main():
   #rq_activate()
   #PerformAlignment()
   SetState(1,"Nut")
+	while 1:
 	  Trigger(1)
 	  LocateBin("Nut")
 	  partData1=LocatePart("Conrod")
@@ -428,21 +429,19 @@ def main():
 	  popup("Stuff1","title",False,False,blocking=True)
 	  zlist = zListSort(zlist)
 	  popup("Stuff2","title",False,False,blocking=True)
-	  x=0
 	  popup("Stuff3","title",False,False,blocking=True)
-	  while (x<3):
-	    popup("Stuff4","title",False,False,blocking=True)
+	  popup("Stuff4","title",False,False,blocking=True)
 		if zlist[0]==pos1[2]:				#Compare data to see if matches
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos1							#Substitute the variable pos
 			popup("Stuff6","title",False,False,blocking=True)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
-			popup("Gripper above the item","Note",False,False,blocking=True)
+			popup("Gripper above the Conrod","Note",False,False,blocking=True)
 			#Open gripper
 			popup("Open gripper","Note",False,False,blocking=True)
 			#Move to item
-			popup("Gripper moved to item","Note",False,False,blocking=True)
+			popup("Gripper moved to Conrod","Note",False,False,blocking=True)
 			#Close gripper
 			popup("Close gripper","Note",False,False,blocking=True)
 			#Move gripper up
@@ -461,11 +460,11 @@ def main():
 			popup("Stuff6","title",False,False,blocking=True)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
-			popup("Gripper above the item","Note",False,False,blocking=True)
+			popup("Gripper above the Nut","Note",False,False,blocking=True)
 			#Open gripper
 			popup("Open gripper","Note",False,False,blocking=True)
 			#Move to item
-			popup("Gripper moved to item","Note",False,False,blocking=True)
+			popup("Gripper moved to Nut","Note",False,False,blocking=True)
 			#Close gripper
 			popup("Close gripper","Note",False,False,blocking=True)
 			#Move gripper up
@@ -484,12 +483,12 @@ def main():
 			popup("Stuff6","title",False,False,blocking=True)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
-			popup("Gripper above the item","Note",False,False,blocking=True)
+			popup("Gripper above the TopFrame","Note",False,False,blocking=True)
 			#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 			#Open gripper
 			popup("Open gripper","Note",False,False,blocking=True)
 			#Move to item
-			popup("Gripper moved to item","Note",False,False,blocking=True)
+			popup("Gripper moved to TopFrame","Note",False,False,blocking=True)
 			#Close gripper
 			popup("Close gripper","Note",False,False,blocking=True)
 			#Move gripper up
@@ -509,11 +508,11 @@ def main():
 			popup("Stuff6","title",False,False,blocking=True)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
-			popup("Gripper above the item","Note",False,False,blocking=True)
+			popup("Gripper above the Conrod","Note",False,False,blocking=True)
 			#Open gripper
 			popup("Open gripper","Note",False,False,blocking=True)
 			#Move to item
-			popup("Gripper moved to item","Note",False,False,blocking=True)
+			popup("Gripper moved to Conrod","Note",False,False,blocking=True)
 			#Close gripper
 			popup("Close gripper","Note",False,False,blocking=True)
 			#Move gripper up
@@ -532,11 +531,11 @@ def main():
 			popup("Stuff6","title",False,False,blocking=True)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
-			popup("Gripper above the item","Note",False,False,blocking=True)
+			popup("Gripper above the Nut","Note",False,False,blocking=True)
 			#Open gripper
 			popup("Open gripper","Note",False,False,blocking=True)
 			#Move to item
-			popup("Gripper moved to item","Note",False,False,blocking=True)
+			popup("Gripper moved to Nut","Note",False,False,blocking=True)
 			#Close gripper
 			popup("Close gripper","Note",False,False,blocking=True)
 			#Move gripper up
@@ -555,12 +554,12 @@ def main():
 			popup("Stuff6","title",False,False,blocking=True)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
-			popup("Gripper above the item","Note",False,False,blocking=True)
+			popup("Gripper above the TopFrame","Note",False,False,blocking=True)
 			#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 			#Open gripper
 			popup("Open gripper","Note",False,False,blocking=True)
 			#Move to item
-			popup("Gripper moved to item","Note",False,False,blocking=True)
+			popup("Gripper moved to TopFrame","Note",False,False,blocking=True)
 			#Close gripper
 			popup("Close gripper","Note",False,False,blocking=True)
 			#Move gripper up
@@ -580,11 +579,11 @@ def main():
 			popup("Stuff6","title",False,False,blocking=True)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
-			popup("Gripper above the item","Note",False,False,blocking=True)
+			popup("Gripper above the Conrod","Note",False,False,blocking=True)
 			#Open gripper
 			popup("Open gripper","Note",False,False,blocking=True)
 			#Move to item
-			popup("Gripper moved to item","Note",False,False,blocking=True)
+			popup("Gripper moved to Conrod","Note",False,False,blocking=True)
 			#Close gripper
 			popup("Close gripper","Note",False,False,blocking=True)
 			#Move gripper up
@@ -603,11 +602,11 @@ def main():
 			popup("Stuff6","title",False,False,blocking=True)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
-			popup("Gripper above the item","Note",False,False,blocking=True)
+			popup("Gripper above the Nut","Note",False,False,blocking=True)
 			#Open gripper
 			popup("Open gripper","Note",False,False,blocking=True)
 			#Move to item
-			popup("Gripper moved to item","Note",False,False,blocking=True)
+			popup("Gripper moved to Nut","Note",False,False,blocking=True)
 			#Close gripper
 			popup("Close gripper","Note",False,False,blocking=True)
 			#Move gripper up
@@ -626,12 +625,12 @@ def main():
 			popup("Stuff6","title",False,False,blocking=True)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
-			popup("Gripper above the item","Note",False,False,blocking=True)
+			popup("Gripper above the TopFrame","Note",False,False,blocking=True)
 			#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 			#Open gripper
 			popup("Open gripper","Note",False,False,blocking=True)
 			#Move to item
-			popup("Gripper moved to item","Note",False,False,blocking=True)
+			popup("Gripper moved to TopFrame","Note",False,False,blocking=True)
 			#Close gripper
 			popup("Close gripper","Note",False,False,blocking=True)
 			#Move gripper up
@@ -645,9 +644,7 @@ def main():
 			#move to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
 		end
-		x=x+1
-	  end
-	
+	end
 end
 
 main() 
