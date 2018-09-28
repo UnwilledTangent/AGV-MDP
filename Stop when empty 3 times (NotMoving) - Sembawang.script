@@ -436,7 +436,6 @@ def main():
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos1							#Substitute the variable pos
 			popup("Stuff6","title",False,False,blocking=True)
-			zlist.pop(0)			#remove the first number, which is the largest number, from the list
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
@@ -460,7 +459,6 @@ def main():
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos2
 			popup("Stuff6","title",False,False,blocking=True)
-			zlist.pop(0)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
@@ -484,7 +482,146 @@ def main():
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos3
 			popup("Stuff6","title",False,False,blocking=True)
-			zlist.pop(0)
+			popup("Stuff7","title",False,False,blocking=True)
+			#Move above the item
+			popup("Gripper above the item","Note",False,False,blocking=True)
+			#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#Move to item
+			popup("Gripper moved to item","Note",False,False,blocking=True)
+			#Close gripper
+			popup("Close gripper","Note",False,False,blocking=True)
+			#Move gripper up
+			popup("Gripper moved up","Note",False,False,blocking=True)
+			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+			#move to box 3
+			popup("Moving to Box 3","Note",False,False,blocking=True)
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+		if zlist[1]==pos1[2]:				#Compare data to see if matches
+			popup("Stuff5","title",False,False,blocking=True)
+			pos=pos1							#Substitute the variable pos
+			popup("Stuff6","title",False,False,blocking=True)
+			popup("Stuff7","title",False,False,blocking=True)
+			#Move above the item
+			popup("Gripper above the item","Note",False,False,blocking=True)
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#Move to item
+			popup("Gripper moved to item","Note",False,False,blocking=True)
+			#Close gripper
+			popup("Close gripper","Note",False,False,blocking=True)
+			#Move gripper up
+			popup("Gripper moved up","Note",False,False,blocking=True)
+			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+			#move to box 1
+			popup("Moving to Box 1","Note",False,False,blocking=True)
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#move back to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+		elif zlist[1]==pos2[2]:
+			popup("Stuff5","title",False,False,blocking=True)
+			pos=pos2
+			popup("Stuff6","title",False,False,blocking=True)
+			popup("Stuff7","title",False,False,blocking=True)
+			#Move above the item
+			popup("Gripper above the item","Note",False,False,blocking=True)
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#Move to item
+			popup("Gripper moved to item","Note",False,False,blocking=True)
+			#Close gripper
+			popup("Close gripper","Note",False,False,blocking=True)
+			#Move gripper up
+			popup("Gripper moved up","Note",False,False,blocking=True)
+			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+			#move to box 2
+			popup("Moving to Box 2","Note",False,False,blocking=True)
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+		elif zlist[1]==pos3[2]:
+			popup("Stuff5","title",False,False,blocking=True)
+			pos=pos3
+			popup("Stuff6","title",False,False,blocking=True)
+			popup("Stuff7","title",False,False,blocking=True)
+			#Move above the item
+			popup("Gripper above the item","Note",False,False,blocking=True)
+			#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#Move to item
+			popup("Gripper moved to item","Note",False,False,blocking=True)
+			#Close gripper
+			popup("Close gripper","Note",False,False,blocking=True)
+			#Move gripper up
+			popup("Gripper moved up","Note",False,False,blocking=True)
+			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+			#move to box 3
+			popup("Moving to Box 3","Note",False,False,blocking=True)
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+		if zlist[2]==pos1[2]:				#Compare data to see if matches
+			popup("Stuff5","title",False,False,blocking=True)
+			pos=pos1							#Substitute the variable pos
+			popup("Stuff6","title",False,False,blocking=True)
+			popup("Stuff7","title",False,False,blocking=True)
+			#Move above the item
+			popup("Gripper above the item","Note",False,False,blocking=True)
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#Move to item
+			popup("Gripper moved to item","Note",False,False,blocking=True)
+			#Close gripper
+			popup("Close gripper","Note",False,False,blocking=True)
+			#Move gripper up
+			popup("Gripper moved up","Note",False,False,blocking=True)
+			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+			#move to box 1
+			popup("Moving to Box 1","Note",False,False,blocking=True)
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#move back to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+		elif zlist[2]==pos2[2]:
+			popup("Stuff5","title",False,False,blocking=True)
+			pos=pos2
+			popup("Stuff6","title",False,False,blocking=True)
+			popup("Stuff7","title",False,False,blocking=True)
+			#Move above the item
+			popup("Gripper above the item","Note",False,False,blocking=True)
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#Move to item
+			popup("Gripper moved to item","Note",False,False,blocking=True)
+			#Close gripper
+			popup("Close gripper","Note",False,False,blocking=True)
+			#Move gripper up
+			popup("Gripper moved up","Note",False,False,blocking=True)
+			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+			#move to box 2
+			popup("Moving to Box 2","Note",False,False,blocking=True)
+			#Open gripper
+			popup("Open gripper","Note",False,False,blocking=True)
+			#move to home position
+			popup("Moving to Home Position","Note",False,False,blocking=True)
+		elif zlist[2]==pos3[2]:
+			popup("Stuff5","title",False,False,blocking=True)
+			pos=pos3
+			popup("Stuff6","title",False,False,blocking=True)
 			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
