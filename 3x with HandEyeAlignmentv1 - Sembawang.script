@@ -259,7 +259,7 @@ def main():
     SaveAlignment() 
 	
 	#Verify Alignment with 2 points
-    SetState(1,"Job")
+    SetState(1,"Nut")
     movep(p[0.2,0.680,0.205,-4.7376,-0.0663,0.0686], a=1.2, v=0.25, r=0.025)
 	Trigger(1)	
 	Verifvec1=extractPosVect()
@@ -401,67 +401,7 @@ def main():
   #rq_activate()
   PerformAlignment()
   SetState(1,"Nut")
-	  Trigger(1)
-	  LocateBin("Nut")
-	  partData1=LocatePart("Conrod")
-	  pos1=extractPose(partData1)
-	  partData2=LocatePart("Nut")
-	  pos2=extractPose(partData2)
-	  popup("Stuff0","title",False,False,blocking=True)
-	  zlist=[pos1[2],pos2[2]]
-	  popup("Stuff1","title",False,False,blocking=True)
-	  zlist = zListSort(zlist)
-	  popup("Stuff2","title",False,False,blocking=True)
-      x=0
-	  while x<2:
-		if zlist[-1]==pos1[2]:				#Compare data to see if matches
-			zlist.remove(pos1[2])			#remove the largest number from list
-			pos=pos1							#Substitute the variable pos
-			#Move above the item
-			popup("Gripper above the item","Note",False,False,blocking=True)
-			#Open gripper
-			popup("Open gripper","Note",False,False,blocking=True)
-			#Move to item
-			popup("Gripper moved to item","Note",False,False,blocking=True)
-			#Close gripper
-			popup("Close gripper","Note",False,False,blocking=True)
-			#Move gripper up
-			popup("Gripper moved up","Note",False,False,blocking=True)
-			#move to home position
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#move to box 1
-			popup("Moving to Box 1","Note",False,False,blocking=True)
-			#Open gripper
-			popup("Open gripper","Note",False,False,blocking=True)
-			#move back to home position
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-			
-		elif zlist[-1]==pos2[2]:
-			pos=pos2
-			zlist.remove(pos2[2])
-			#Move above the item
-			popup("Gripper above the item","Note",False,False,blocking=True)
-			#Open gripper
-			popup("Open gripper","Note",False,False,blocking=True)
-			#Move to item
-			popup("Gripper moved to item","Note",False,False,blocking=True)
-			#Close gripper
-			popup("Close gripper","Note",False,False,blocking=True)
-			#Move gripper up
-			popup("Gripper moved up","Note",False,False,blocking=True)
-			#move to home position
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#move to box 2
-			popup("Moving to Box 2","Note",False,False,blocking=True)
-			#Open gripper
-			popup("Open gripper","Note",False,False,blocking=True)
-			#move to home position
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-			
-	    end
-		x=x+1
-	  end
-	
+  
 end
 
 main() 
