@@ -411,17 +411,31 @@ def main():
     return x
   end
   
-  def pickUpHighestJob(zlist,pos1,pos2,pos3)
-	x=0
+  Connect_To_PLB()
+  #rq_activate()
+  #PerformAlignment()
+  SetState(1,"Nut")
+	  Trigger(1)
+	  LocateBin("Nut")
+	  partData1=LocatePart("Conrod")
+	  pos1=extractPose(partData1)
+	  partData2=LocatePart("Nut")
+	  pos2=extractPose(partData2)
+	  partData3=LocatePart("TopFrame")
+	  pos3=extractPose(partData3)
+	  popup("Stuff0","title",False,False,blocking=True)
+	  zlist=[pos1[2],pos2[2],pos3[2]]
+	  popup("Stuff1","title",False,False,blocking=True)
+	  zlist = zListSort(zlist)
+	  popup("Stuff2","title",False,False,blocking=True)
+	  x=0
 	  popup("Stuff3","title",False,False,blocking=True)
 	  while (x<3):
 	    popup("Stuff4","title",False,False,blocking=True)
 		if zlist[0]==pos1[2]:				#Compare data to see if matches
 			popup("Stuff5","title",False,False,blocking=True)
-			pos=pos1							#Substitute the variable pos
-			popup("Stuff6","title",False,False,blocking=True)
 			zlist.remove(pos1[2])			#remove the largest number from list
-			popup("Stuff7","title",False,False,blocking=True)
+			pos=pos1							#Substitute the variable pos
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
 			#Open gripper
@@ -443,9 +457,7 @@ def main():
 		elif zlist[0]==pos2[2]:
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos2
-			popup("Stuff6","title",False,False,blocking=True)
 			zlist.remove(pos2[2])
-			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
 			#Open gripper
@@ -466,10 +478,8 @@ def main():
 			popup("Moving to Home Position","Note",False,False,blocking=True)
 		elif zlist[0]==pos3[2]:
 			popup("Stuff5","title",False,False,blocking=True)
-			pos=pos3
-			popup("Stuff6","title",False,False,blocking=True)
+			pos=pos3 
 			zlist.remove(pos3[2])
-			popup("Stuff7","title",False,False,blocking=True)
 			#Move above the item
 			popup("Gripper above the item","Note",False,False,blocking=True)
 			#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
@@ -492,26 +502,7 @@ def main():
 		end
 		x=x+1
 	  end
-  end
-  
-  Connect_To_PLB()
-  #rq_activate()
-  #PerformAlignment()
-  SetState(1,"Nut")
-	  Trigger(1)
-	  LocateBin("Nut")
-	  partData1=LocatePart("Conrod")
-	  pos1=extractPose(partData1)
-	  partData2=LocatePart("Nut")
-	  pos2=extractPose(partData2)
-	  partData3=LocatePart("TopFrame")
-	  pos3=extractPose(partData3)
-	  popup("Stuff0","title",False,False,blocking=True)
-	  zlist=[pos1[2],pos2[2],pos3[2]]
-	  popup("Stuff1","title",False,False,blocking=True)
-	  zlist = zListSort(zlist)
-	  popup("Stuff2","title",False,False,blocking=True)
-	  pickUpHighestJob(zlist,pos1,pos2,pos3)
+	
 end
 
 main() 
