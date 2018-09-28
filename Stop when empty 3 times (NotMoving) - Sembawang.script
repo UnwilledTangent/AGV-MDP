@@ -502,6 +502,7 @@ def main():
 			popup("Open gripper","Note",False,False,blocking=True)
 			#move to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
+		end
 		if zlist[1]==pos1[2]:				#Compare data to see if matches
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos1							#Substitute the variable pos
@@ -572,6 +573,7 @@ def main():
 			popup("Open gripper","Note",False,False,blocking=True)
 			#move to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
+		end
 		if zlist[2]==pos1[2]:				#Compare data to see if matches
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos1							#Substitute the variable pos
