@@ -1,5 +1,5 @@
 # AGV-MDP
-SP's Iconic Project. This is the code repository for the Autonomous Guidance Vehicle of the Multi-Disciplinary Project.
+Automatic parts sorting machine. This is Singapore Polytechnic's Iconic Project, Autonomous Guidance Vehicle. This project is worked on by various Singapore Polytechnic students and lecturers.
 ## Team Members
 * Mok Jia Luo
 * Eudora Shi
