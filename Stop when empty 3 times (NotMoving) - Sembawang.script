@@ -201,89 +201,74 @@ def main():
   end
   
   def PerformAlignment(): #Function to perform a PLB HEA procedure (adapt robot positions to your environment!)
-    SetState(3,"Job")
-	# !!!!!! ADAPT THE ROBOT POSITIONS TO YOUR ENVIRONMENT !!!!!!!
-	
-	movep(p[.151568921592, .460281512138, .259561009600, .048331736095, .015079315702, 2.868624716847], a=1.2, v=0.25, r=0.025) #Move with robot to first position	
-    Trigger(1) #First Image
-    vec1=extractPosVect() #store position vector
+    SetState(3,"Nut")
+    movel(p[0.02,0.530,0.250,4.7107,0,0], a=1.2, v=0.25, r=0)
+	Trigger(1) #First Image
+    vec1=[0.020,0.530,0.250] #store position vector
     AddAlignmentPoint(vec1) #Add alignment point to PLBs HEA procedure
+	popup("Alignment Position 1|1","Title",False,False,blocking=True)
 
-	#repeat for the rest of the positions
-	movep(p[-.139404452817, .523078933418, .252379127371, -.065841045101, .041544435660, -2.860108630683], a=1.2, v=0.25, r=0.025)
-    Trigger(2)
-    vec2=extractPosVect()
+	movel(p[0.140,0.625,0.25,4.6850,0,0], a=1.2, v=0.25, r=0)
+	Trigger(2)
+    vec2=[0.140,0.625,0.250]
     AddAlignmentPoint(vec2)
+	popup("Alignment Position 2|1","Title",False,False,blocking=True)
 
-    movep(p[-.269123415887, .447587435739, .200033344414, -.094784056126, .085108761107, -2.568228916725], a=1.2, v=0.25, r=0.025)
+	movel(p[0.325,0.530,0.250,4.6923,0,0], a=1.2, v=0.25, r=0)
 	Trigger(3)   
-    vec3=extractPosVect()
+    vec3=[0.325,0.530,0.250]
     AddAlignmentPoint(vec3)
+	popup("Alignment Position 3|1","Title",False,False,blocking=True)
 
-	movep(p[-.371060412623, .083659020183, .212930115399, .012872680108, .096038381121, -1.725588836721], a=1.2, v=0.25, r=0.025)
-    Trigger(4)   
-    vec4=extractPosVect()
+	movel(p[0.02,0.530,0.325,4.7107,0,0], a=1.2, v=0.25, r=0)
+	Trigger(4)   
+    vec4=[0.020,0.530,0.325]
     AddAlignmentPoint(vec4)
+	popup("Alignment Position 1|2","Title",False,False,blocking=True)
 
-    movep(p[-.043092213663, .325157262058, .224341494607, .116202156623, -.014207057654, -2.895107632763], a=1.2, v=0.25, r=0.025)   
-    Trigger(5) 
-	vec5=extractPosVect()
+	movel(p[0.140,0.625,0.325,4.6850,0,0], a=1.2, v=0.25, r=0)
+	Trigger(5) 
+	vec5=[0.140,0.625,0.325]
     AddAlignmentPoint(vec5)
+	popup("Alignment Position 2|2","Title",False,False,blocking=True)
 
-	movep(p[.146060260711, .453788023418, .313324213647, -.104643134723, .008540694918, 2.840992049902], a=1.2, v=0.25, r=0.025)
-    Trigger(6)   
-    vec6=extractPosVect()
+	movel(p[0.325,0.530,0.325,4.6923,0,0], a=1.2, v=0.25, r=0)
+	Trigger(6)   
+    vec6=[0.325,0.530,0.325]
     AddAlignmentPoint(vec6)
+	popup("Alignment Position 3|2","Title",False,False,blocking=True)
 
-	movep(p[-.271941966011, .416737861273, .280460201016, .098479152458, .023054504674, -2.558237358906], a=1.2, v=0.25, r=0.025)
-    Trigger(7)   
-    vec7=extractPosVect()
+	movel(p[0.02,0.530,0.400,4.7107,0,0], a=1.2, v=0.25, r=0)
+	Trigger(7)   
+    vec7=[0.02,0.530,0.400]
     AddAlignmentPoint(vec7)
+	popup("Alignment Position 1|3","Title",False,False,blocking=True)
 
-    movep(p[-.135594358561, .507948669203, .331497826682, -.035484642710, .123135758275, -2.872249849368], a=1.2, v=0.25, r=0.025)
-    Trigger(10) 
-	vec10=extractPosVect()
-    AddAlignmentPoint(vec10)
-	
-    movep(p[-.27491, .23223, .31975, -.054759605657, .155227213554, -2.797011908045], a=0.2, v=0.1, r=0.025)
-    Trigger(11) 
-	vec11=extractPosVect()
-    AddAlignmentPoint(vec11)
-	
-    movep(p[-.404259302592, .123441595111, .552119471181, -.074626369964, .062714911844, -1.805916959848], a=1.2, v=0.1, r=0.025)
-    Trigger(12) 
-	vec12=extractPosVect()
-    AddAlignmentPoint(vec12)
-	
-    movep(p[.220035674776, .424398228894, .433847097582, -.002630243902, -.090151219806, 2.690671470860], a=1.2, v=0.15, r=0.025)
-    Trigger(13) 
-	vec13=extractPosVect()
-    AddAlignmentPoint(vec13)
-	
-    movep(p[-.015911605212, .280990025248, .434455908148, -.078162653949, .063540927489, -2.858458126862], a=1.2, v=0.25, r=0.025)
-    Trigger(14) 
-	vec14=extractPosVect()
-    AddAlignmentPoint(vec14)
-	
-    movep(p[-.142713515206, .489732795233, .362369980917, -.136137869683, .157228683584, -2.825565463452], a=1.2, v=0.25, r=0.025)
-    Trigger(15) 
-	vec15=extractPosVect()
-    AddAlignmentPoint(vec15)	
+	movel(p[0.140,0.625,0.400,4.6850,0,0], a=1.2, v=0.25, r=0)
+	Trigger(8)   
+    vec8=[0.140,0.625,0.400]
+    AddAlignmentPoint(vec8)
+	popup("Alignment Position 2|3","Title",False,False,blocking=True)
+
+	movel(p[0.325,0.530,0.400,4.6923,0,0], a=1.2, v=0.25, r=0)
+	Trigger(9)   
+    vec9=[0.325,0.530,0.400]
+    AddAlignmentPoint(vec9)
+	popup("Alignment Position 3|3","Title",False,False,blocking=True)
 	
     SaveAlignment() 
 	
 	#Verify Alignment with 2 points
-    SetState(1,"Job")
-    movep(p[-.09175, .4616, .4937, 0.0125, .1783, 2.2116], a=1.2, v=0.25, r=0.025)
+    SetState(1,"Nut")
+    movel(p[0.13,0.565,0.265,4.7028,0.3435,-0.2538], a=1.2, v=0.25, r=0.025)
 	Trigger(1)	
-	Verifvec1=extractPosVect()
+	Verifvec1=[0.13,0.565,0.265]
     VerifyAlignment(Verifvec1) 
 	
-	movep(p[.13707, .50438, .38195, 0.1233, .0633, 1.7322], a=1.2, v=0.25, r=0.025)
+	movel(p[0.080,0.525,0.300,4.6929,-0.2487,0.2412], a=1.2, v=0.25, r=0.025)
 	Trigger(2)	
-	Verifvec2=extractPosVect()
+	Verifvec2=[0.415,0.582,0.220]
     VerifyAlignment(Verifvec2) 
-	
   end
   
   def extractFromList(list,startingIndex,Length): #Function extracting a subset list out of a list. INPUT=list to make the extraction from, int starting extraction index,int length of extraction. OUTPUT= Extracted list
