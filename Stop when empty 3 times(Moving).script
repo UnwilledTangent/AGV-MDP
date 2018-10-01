@@ -421,12 +421,12 @@ def main():
 		##Open gripper of UR5
 		popup("Gripper opens","Note",False,False,blocking=True)
 		rq_open_and_wait()
-		##move to home position of UR5
-		popup("Moving to Home Position","Note",False,False,blocking=True)
 		#waypoint 6 / towards box 1
 		movel(p[.4278, -.1992, .5544, 2.872, -1.254, -0.035], a=1.2, v=0.25, r=0)
 		#middle_pos / approach_point
 		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
+		##move to home position of UR5
+		popup("Moving to Home Position","Note",False,False,blocking=True)
 		
   end
 	
@@ -460,12 +460,12 @@ def main():
 		##Open gripper of UR5
 		popup("Gripper opens","Note",False,False,blocking=True)
 		rq_open_and_wait()
-		##move to home position of UR5
-		popup("Moving to Home Position","Note",False,False,blocking=True)
 		#waypoint 6 / towards box 2
 		movel(p[.1294, -.4814, .5456, 1.159, -2.915, 0.0330], a=1.2, v=0.25, r=0)
 		#middle_pos / approach_point
 		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
+		##move to home position of UR5
+		popup("Moving to Home Position","Note",False,False,blocking=True)
 		
   end
 	
@@ -497,12 +497,12 @@ def main():
 		##Open gripper of UR5
 		popup("Gripper opens","Note",False,False,blocking=True)
 		rq_open_and_wait()
-		##move to home position of UR5
-		popup("Moving to Home Position","Note",False,False,blocking=True)
 		#waypoint 5 / towards box 3
 		movel(p[.2373, -.3509, .5556, 2.870, -1.2405, -0.08], a=1.2, v=0.25, r=0)
 		#middle_pos / approach_point
 		movel(p[-.033, -.2006, .49368, 1.2414, -2.8728, -0.0105], a=1.2, v=0.25, r=0)	
+		##move to home position of UR5
+		popup("Moving to Home Position","Note",False,False,blocking=True)
 		
   end
 		
