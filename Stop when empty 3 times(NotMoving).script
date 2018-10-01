@@ -400,7 +400,9 @@ def main():
   #rq_activate()
   #PerformAlignment()
   SetState(1,"Nut")
-	while 1:
+  scancounter=0
+  while 1:
+	while (scancounter<3):
 	  Trigger(1)
 	  LocateBin("Nut")
 	  partData1=LocatePart("Conrod")
@@ -416,6 +418,12 @@ def main():
 	  popup("Stuff2","title",False,False,blocking=True)
 	  popup("Stuff3","title",False,False,blocking=True)
 	  popup("Stuff4","title",False,False,blocking=True)
+	  if zlist[0]==0 and zlist[1]==0 and zlist[2]==[0]:
+		popup("No parts in bin","Tite",True,False,blocking=True)
+		scancounter=scancounter+1
+	  
+	  else 
+		scancounter=0
 		if zlist[0]==pos1[2]:				#Compare data to see if matches
 			popup("Stuff5","title",False,False,blocking=True)
 			pos=pos1							#Substitute the variable pos
@@ -629,7 +637,10 @@ def main():
 			#move to home position
 			popup("Moving to Home Position","Note",False,False,blocking=True)
 		end
+	  end
 	end
+	popup("Bin is empty","title",False,False,blocking=True)
+end
 end
 
 main() 
