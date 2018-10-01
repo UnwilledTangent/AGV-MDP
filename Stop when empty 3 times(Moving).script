@@ -402,8 +402,8 @@ def main():
 		##Close gripper
 		rq_close_and_wait()
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		##move to home position of UR5
-		popup("Moving to Home Position","Note",False,False,blocking=True)
+		##Begin to scan and place part into box
+		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
 		#waypoint 4
 		movel(p[-.3537, -.3261, .5554, 1.1882,-2.8890, -0.0134], a=1.2, v=0.25, r=0)
 		##Lets begin and move for box 1 "conrod"
@@ -439,8 +439,8 @@ def main():
 		##Close gripper
 		rq_close_and_wait()
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		##move to home position of UR5
-		popup("Moving to Home Position","Note",False,False,blocking=True)
+		##Begin to scan and place part into box
+		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
 		#waypoint 4
 		movel(p[-.3537, -.3261, .5554, 1.195,-2.8860, -0.0134], a=1.2, v=0.25, r=0)
 		##Lets begin and move for box 2 "nut"
@@ -478,8 +478,8 @@ def main():
 		##Close gripper
 		rq_close_and_wait()
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		##move to home position of UR5
-		popup("Moving to Home Position","Note",False,False,blocking=True)
+		##Begin to scan and place part into box
+		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
 		#waypoint 4
 		movel(p[-.3537, -.3261, .55549, 1.188,-2.8890, -0.0134], a=1.2, v=0.25, r=0)
 		##Lets begin and move for box 3 "top_frame"
