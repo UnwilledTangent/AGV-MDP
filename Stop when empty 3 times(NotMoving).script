@@ -409,7 +409,9 @@ def main():
 				scancounter = scancounter + 1
 			else: 
 				scancounter = 0
-				if zlist[0] == pos1[2]:  # Compare data to see if matches
+				if zlist[0]==0:
+					pass
+				elif zlist[0] == pos1[2]:  # Compare data to see if matches
 					pos = pos1  # Substitute the variable pos
 					# Move above the item
 					popup("Gripper above the Conrod", "Note", False, False, blocking=True)
@@ -471,7 +473,9 @@ def main():
 					# move to home position
 					popup("Moving to Home Position", "Note", False, False, blocking=True)
 				end
-				if zlist[1] == pos1[2]:  # Compare data to see if matches
+				if zlist[1]==0:
+					pass
+				elif zlist[1] == pos1[2]:  # Compare data to see if matches
 					pos = pos1  # Substitute the variable pos
 					# Move above the item
 					popup("Gripper above the Conrod", "Note", False, False, blocking=True)
@@ -533,7 +537,9 @@ def main():
 					# move to home position
 					popup("Moving to Home Position", "Note", False, False, blocking=True)
 				end
-				if zlist[2] == pos1[2]:  # Compare data to see if matches
+				if zlist[2]==0:
+					pass
+				elif zlist[2] == pos1[2]:  # Compare data to see if matches
 					pos = pos1  # Substitute the variable pos
 					# Move above the item
 					popup("Gripper above the Conrod", "Note", False, False, blocking=True)
