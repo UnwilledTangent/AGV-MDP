@@ -542,6 +542,23 @@ def main():
 		##move to home position of UR5
 		popup("Moving to Home Position","Note",False,False,blocking=True)
 	end
+	
+	def zListSort(x):
+		if x[0] > x[1] and x[1] > x[2] and x[0] > x[2]:
+			x = [x[0], x[1], x[2]]
+		elif x[0] > x[2] and x[2] > x[1] and x[0] > x[1]:
+			x = [x[0], x[2], x[1]]
+		elif x[1] > x[0] and x[0] > x[2] and x[1] > x[2]:
+			x = [x[1], x[0], x[2]]
+		elif x[1] > x[2] and x[2] > x[0] and x[1] > x[0]:
+			x = [x[1], x[2], x[0]]
+		elif x[2] > x[0] and x[0] > x[1] and x[2] > x[1]:
+			x = [x[2], x[0], x[1]]
+		elif x[2] > x[1] and x[1] > x[0] and x[2] > x[0]:
+			x = [x[2], x[1], x[0]]
+		end
+		return x
+	end
 		
 	Connect_To_PLB()
 	rq_activate()
@@ -558,7 +575,7 @@ def main():
 		partData3=LocatePart("TopFrame")
 		pos3=extractPose(partData3)
 		zlist=[pos1[2],pos2[2],pos3[2]]
-		zlist.sort()
+		zlist = zListSort(zlist)
 		for x (0,len(zlist):
 			if zlist[-1]==0
 				scancounter+=1
