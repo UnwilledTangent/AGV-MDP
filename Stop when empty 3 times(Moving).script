@@ -433,7 +433,7 @@ def main():
 		end
 	end
 
-		def pickConrod():
+	def pickConrod():
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
 		##Open gripper
