@@ -375,63 +375,6 @@ def main():
 		end	  
 	end
 
-	def errorHandler(errorNumber): #Function returning a popup error message according to the error number from PLB. INPUT=int the PLB error number.
-		if errorNumber==-1:
-			popup("PLB error -1:Unexpected Error")
-		elif errorNumber==1:
-			popup("PLB error 1:Robot communication error")
-		elif errorNumber==2:
-			popup("PLB error 2:Sensor Error")
-		elif errorNumber==3:
-			popup("PLB error 3:License Error")
-		elif errorNumber==21:
-			popup("PLB error 21:Unknown Job")
-		elif errorNumber==22:
-			popup("PLB error 22:Invalid Job")
-		elif errorNumber==31:
-			popup("PLB error 31:Set state failed")
-		elif errorNumber==32:
-			popup("PLB error 32:PLB Busy")
-		elif errorNumber==41:
-			popup("PLB error 41:Trigger error")
-		elif errorNumber==42:
-			popup("PLB error 42:Invalid State for Triggering")
-		elif errorNumber==43:
-			popup("PLB error 43:Overtriggered")
-		elif errorNumber==44:
-			popup("PLB error 44:Acquisition Failed")
-		elif errorNumber==101:
-			popup("PLB error 101:No image")
-		elif errorNumber==102:
-			popup("PLB error 102:Invalid State")
-		elif errorNumber==103:
-			popup("PLB error 103:PLB Busy")
-		elif errorNumber==111:
-			popup("PLB error 111:No part located")
-		elif errorNumber==112:
-			popup("PLB error 112:Part Overlapped")
-		elif errorNumber==113:
-			popup("PLB error 113:Gripper collision")
-		elif errorNumber==114:
-			popup("PLB error 114:Bin empty")
-		elif errorNumber==121:
-			popup("PLB error 121:Bin not found")
-		elif errorNumber==131:
-			popup("PLB error 131:Alignment target not found")
-		elif errorNumber==132:
-			popup("PLB error 132: Failed to add Alignment point")
-		elif errorNumber==133:
-			popup("PLB error 133: Too few points in Alignment")
-		elif errorNumber==134:
-			popup("PLB error 134:Alignment calculation failed")
-		elif errorNumber==135:
-			popup("PLB error 135:Alignment deviation Threshold exceeded")
-		elif errorNumber==136:
-			popup("PLB error 136:Too much scaling")	 
-		elif errorNumber==137:
-			popup("PLB error 137:Invalid Z axis direction")
-		end
-	end
 
 
 	def pickConrod(Data)
@@ -474,19 +417,17 @@ def main():
 		pos=extractPose(Data)
 		pickPose=extractPickPoseAlias(Data)
 		rq_open_and_wait()
-		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
 		movel(pos)
 		rq_close_and_wait()
-		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		#movep(p[],a=1.2,v=0.25, r=0) mid position
+		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+		#movel(p[],a=1.2,v=0.25, r=0) mid position
 		if pickPose=="Mid":
-			#move to scan
+		movel(p[-0.01419,-0.16248,0.85071,0.5642,-1.52,0.6662],a=1.2,v=0.25,r=0)
 		elif pickPose=="Left":
-			#move to scan
+		movel(p[0.339,-0.28097,0.62956,1.7609,-0.6180,1.7078],a=1.2,v=0.25,r=0)
 		elif pickPose=="Right":
-			#move to scan
-		elif pickPose=="Front":
-			#move to scan
+		movel(p[0.29356,-0.30756,0.62955,1.7571,-0.7069,1.7680],a=1.2,v=0.25,r=0)
 		end
 		#move to place in box 3
 		rq_open_and_wait()
