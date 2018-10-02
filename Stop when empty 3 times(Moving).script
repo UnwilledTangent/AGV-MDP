@@ -188,74 +188,88 @@ def main():
 		return vec
 	end
 	
-	def PerformAlignment():  # Function to perform a PLB HEA procedure (adapt robot positions to your environment!)
-		SetState(3,"Nut")
-		movel(p[-0.500,-0.500,0.500,0.9689,2.4456,-2.591], a=1.2, v=0.25, r=0)
+	def PerformAlignment(): #Function to perform a PLB HEA procedure (adapt robot positions to your environment!)
+		SetState(3,"Job")
+		# !!!!!! ADAPT THE ROBOT POSITIONS TO YOUR ENVIRONMENT !!!!!!!
+	
+		movep(p[.151568921592, .460281512138, .259561009600, .048331736095, .015079315702, 2.868624716847], a=1.2, v=0.25, r=0.025) #Move with robot to first position	
 		Trigger(1) #First Image
-		vec1=[-0.500,-0.500,0.500] #store position vector
+		vec1=extractPosVect() #store position vector
 		AddAlignmentPoint(vec1) #Add alignment point to PLBs HEA procedure
-		popup("Alignment Position 1|1","Title",False,False,blocking=True)
 
-		movel(p[-0.500,-0.190,0.500,0.9689,2.4456,-2.591], a=1.2, v=0.25, r=0)
+		#repeat for the rest of the positions
+		movep(p[-.139404452817, .523078933418, .252379127371, -.065841045101, .041544435660, -2.860108630683], a=1.2, v=0.25, r=0.025)
 		Trigger(2)
-		vec2=[-0.500,-0.190,0.500]
+		vec2=extractPosVect()
 		AddAlignmentPoint(vec2)
-		popup("Alignment Position 2|1","Title",False,False,blocking=True)
 
-		movel(p[-0.180,-0.500,0.500,0.9689,2.4456,-2.591], a=1.2, v=0.25, r=0)
+		movep(p[-.269123415887, .447587435739, .200033344414, -.094784056126, .085108761107, -2.568228916725], a=1.2, v=0.25, r=0.025)
 		Trigger(3)   
-		vec3=[-0.180,-0.500,0.500]
+		vec3=extractPosVect()
 		AddAlignmentPoint(vec3)
-		popup("Alignment Position 3|1","Title",False,False,blocking=True)
 
-		movel(p[-0.500,-0.500,0.6500,0.9689,2.4456,-2.591], a=1.2, v=0.25, r=0)
+		movep(p[-.371060412623, .083659020183, .212930115399, .012872680108, .096038381121, -1.725588836721], a=1.2, v=0.25, r=0.025)
 		Trigger(4)   
-		vec4=[-0.500,-0.500,0.650]
+		vec4=extractPosVect()
 		AddAlignmentPoint(vec4)
-		popup("Alignment Position 1|2","Title",False,False,blocking=True)
 
-		movel(p[-0.500,-0.190,0.650,0.9689,2.4456,-2.591], a=1.2, v=0.25, r=0)
+		movep(p[-.043092213663, .325157262058, .224341494607, .116202156623, -.014207057654, -2.895107632763], a=1.2, v=0.25, r=0.025)   
 		Trigger(5) 
-		vec5=[-0.500,-0.190,0.650]
+		vec5=extractPosVect()
 		AddAlignmentPoint(vec5)
-		popup("Alignment Position 2|2","Title",False,False,blocking=True)
 
-		movel(p[-0.180,-0.500,0.650,0.9689,2.4456,-2.591], a=1.2, v=0.25, r=0)
+		movep(p[.146060260711, .453788023418, .313324213647, -.104643134723, .008540694918, 2.840992049902], a=1.2, v=0.25, r=0.025)
 		Trigger(6)   
-		vec6=[-0.180,-0.500,0.650]
+		vec6=extractPosVect()
 		AddAlignmentPoint(vec6)
-		popup("Alignment Position 3|2","Title",False,False,blocking=True)
 
-		movel(p[-0.500,-0.500,0.800,0.9689,2.4456,-2.591], a=1.2, v=0.25, r=0)
+		movep(p[-.271941966011, .416737861273, .280460201016, .098479152458, .023054504674, -2.558237358906], a=1.2, v=0.25, r=0.025)
 		Trigger(7)   
-		vec7=[-0.500,-0.500,0.800]
+		vec7=extractPosVect()
 		AddAlignmentPoint(vec7)
-		popup("Alignment Position 1|3","Title",False,False,blocking=True)
 
-		movel(p[-0.500,-0.190,0.800,0.9689,2.4456,-2.591], a=1.2, v=0.25, r=0)
-		Trigger(8)   
-		vec8=[-0.500,-0.190,0.800]
-		AddAlignmentPoint(vec8)
-		popup("Alignment Position 2|3","Title",False,False,blocking=True)
-
-		movel(p[-0.180,-0.500,0.800,0.9689,2.4456,-2.591], a=1.2, v=0.25, r=0)
-		Trigger(9)   
-		vec9=[-0.180,-0.500,0.800]
-		AddAlignmentPoint(vec9)
-		popup("Alignment Position 3|3","Title",False,False,blocking=True)
+		movep(p[-.135594358561, .507948669203, .331497826682, -.035484642710, .123135758275, -2.872249849368], a=1.2, v=0.25, r=0.025)
+		Trigger(10) 
+		vec10=extractPosVect()
+		AddAlignmentPoint(vec10)
+	
+		movep(p[-.27491, .23223, .31975, -.054759605657, .155227213554, -2.797011908045], a=0.2, v=0.1, r=0.025)
+		Trigger(11) 
+		vec11=extractPosVect()
+		AddAlignmentPoint(vec11)
+	
+		movep(p[-.404259302592, .123441595111, .552119471181, -.074626369964, .062714911844, -1.805916959848], a=1.2, v=0.1, r=0.025)
+		Trigger(12) 
+		vec12=extractPosVect()
+		AddAlignmentPoint(vec12)
+	
+		movep(p[.220035674776, .424398228894, .433847097582, -.002630243902, -.090151219806, 2.690671470860], a=1.2, v=0.15, r=0.025)
+		Trigger(13) 
+		vec13=extractPosVect()
+		AddAlignmentPoint(vec13)
+	
+		movep(p[-.015911605212, .280990025248, .434455908148, -.078162653949, .063540927489, -2.858458126862], a=1.2, v=0.25, r=0.025)
+		Trigger(14) 
+		vec14=extractPosVect()
+		AddAlignmentPoint(vec14)
+	
+		movep(p[-.142713515206, .489732795233, .362369980917, -.136137869683, .157228683584, -2.825565463452], a=1.2, v=0.25, r=0.025)
+		Trigger(15) 
+		vec15=extractPosVect()
+		AddAlignmentPoint(vec15)	
 	
 		SaveAlignment() 
 	
-	# Verify Alignment with 2 points
-		SetState(1, "Nut")
-		movel(p[0.13, 0.565, 0.265, 4.7028, 0.3435, -0.2538], a=1.2, v=0.25, r=0.025)
+		#Verify Alignment with 2 points
+		SetState(1,"Job")
+		movep(p[-.09175, .4616, .4937, 0.0125, .1783, 2.2116], a=1.2, v=0.25, r=0.025)
 		Trigger(1)	
-		Verifvec1 = [0.13, 0.565, 0.265]
+		Verifvec1=extractPosVect()
 		VerifyAlignment(Verifvec1) 
 	
-		movel(p[0.080, 0.525, 0.300, 4.6929, -0.2487, 0.2412], a=1.2, v=0.25, r=0.025)
+		movep(p[.13707, .50438, .38195, 0.1233, .0633, 1.7322], a=1.2, v=0.25, r=0.025)
 		Trigger(2)	
-		Verifvec2 = [0.415, 0.582, 0.220]
+		Verifvec2=extractPosVect()
 		VerifyAlignment(Verifvec2) 
 	end
 	
@@ -419,19 +433,16 @@ def main():
 		end
 	end
 
+
 	def pickConrod(Data)
 		pos=extractPose(Data)
 		pickPose=extractPickPoseAlias(Data)
-	def pickConrod():
-		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
-		##Open gripper
+		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
 		rq_open_and_wait()
-		movep(pos)
-		##Close gripper
+		movel(pos)
 		rq_close_and_wait()
-		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		#movel(p[],a=1.2,v=0.25, r=0) home position
+		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+		#movel(p[],a=1.2,v=0.25, r=0) mid position
 		if pickPose=="Handle":
 			movel(p[0.27476,-0.25024,592.88,1.2091,-2.9005,-0.0059],a=1.2,v=0.25,r=0)
 		elif pickPose=="Head":
@@ -441,88 +452,30 @@ def main():
 		end
 		#move to place in box 1
 		rq_open_and_wait()
-		#move to home position
+		#move to prepick position
 	end
 	
 	def pickNut(Data)
 		pos=extractPose(Data)
-		#Begin to scan and place part into box
-		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
-		#ready to scan
-		movel(p[-.3537, -.3261, .5554, 1.1882,-2.8890, -0.0134], a=1.2, v=0.25, r=0)
-		#Lets begin and move for box 1 "conrod"
-		popup("Moving to Box 1","Note",False,False,blocking=True)
-		#middle_pos / approach_point
-		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
-		#scanning
-		movel(p[.2944, -.2832, .5928, 1.209, -2.900, -0.006], a=1.2, v=0.25, r=0)
-		#Towards or exit box 1
-		movel(p[.4278, -.1992, .5544, 2.872, -1.254, -0.035], a=1.2, v=0.25, r=0)
-		#lower_into_box 1
-		movel(p[.4278, -.1991, .5226, 2.872, -1.254, -0.035], a=1.2, v=0.25, r=0)
-		##Open gripper of UR5
-		popup("Gripper opens","Note",False,False,blocking=True)
+		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
 		rq_open_and_wait()
-		#Towards or exit box 1
-		movel(p[.4278, -.1992, .5544, 2.872, -1.254, -0.035], a=1.2, v=0.25, r=0)
-		#middle_pos / approach_point
-		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
-		#Pick and Place Conrod done
-		popup("Part scan and sorting complete","Note",False,False,blocking=True)
-	end
-	
-	def pickNut():
-		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
-		##Open gripper
-		rq_open_and_wait()
-		movep(pos)
-		##Close gripper
+		movel(pos)
 		rq_close_and_wait()
-		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		#movep(p[],a=1.2,v=0.25, r=0) mid position
+		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+		#movel(p[],a=1.2,v=0.25, r=0) mid position
 		#move to scan
-		#rotate object by 60 degrees
+		#rotate object
 		#place in box 2
+		rq_open_and_wait()
+		#move to prepickup position
 	end
 	
 	def pickTopFrame(Data):
 		pos=extractPose(Data)
 		pickPose=extractPickPoseAlias(Data)
-		#Begin to scan and place part into box
-		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
-		#ready to scan
-		movel(p[-.3537, -.3261, .5554, 1.195,-2.8860, -0.0134], a=1.2, v=0.25, r=0)
-		#Lets begin and move for box 2 "nut"
-		popup("Moving to Box 2","Note",False,False,blocking=True)
-		#middle_pos / approach_point
-		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
-		#scanning
-		movel(p[.2960, -.2580, .5905, .368, -3.109, -0.0435], a=1.2, v=0.25, r=0)
-		#scanning2
-		movel(p[.2960, -.2580, .5905, 2.003, -2.426, -0.0456], a=1.2, v=0.25, r=0)
-		#Towards or exit box 2
-		movel(p[.1294, -.4814, .5456, 1.159, -2.915, 0.0330], a=1.2, v=0.25, r=0)
-		#lower_into_box 2
-		movel(p[.1294, -.4813, .5301, 1.159, -2.915, 0.033], a=1.2, v=0.25, r=0)
-		##Open gripper of UR5
-		popup("Gripper opens","Note",False,False,blocking=True)
 		rq_open_and_wait()
-		#Towards or exit box 2
-		movel(p[.1294, -.4814, .5456, 1.159, -2.915, 0.0330], a=1.2, v=0.25, r=0)
-		#middle_pos / approach_point
-		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
-		#Pick and Place Nut done
-		popup("Part scan and sorting complete","Note",False,False,blocking=True)
-	end
-	
-	def pickTopframe():
-		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
-		##Open gripper
-		rq_open_and_wait()
-		movep(pos)
-		##Close gripper
+		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+		movel(pos)
 		rq_close_and_wait()
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
 		#movep(p[],a=1.2,v=0.25, r=0) mid position
@@ -536,31 +489,8 @@ def main():
 			#move to scan
 		end
 		#move to place in box 3
-		#Begin to scan and place part into box
-		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
-		#ready to scan
-		movel(p[-.3537, -.3261, .55549, 1.188,-2.8890, -0.0134], a=1.2, v=0.25, r=0)
-		#Lets begin and move for box 3 "top_frame"
-		popup("Moving to Box 3","Note",False,False,blocking=True)
-		#middle_pos / approach_point
-		movel(p[-.033, -.2006, .49368, 1.2414, -2.8728, -0.0105], a=1.2, v=0.25, r=0)
-		#rotate to scan 
-		movel(p[.2525, -.2618, .63465, 1.175, -0.706, 1.7678], a=1.2, v=0.25, r=0)
-		#scanning
-		movel(p[.3207, -.2884, .6296, 1.7570, -.7070, 1.7679], a=1.2, v=0.25, r=0)
-		#Towards or exit box 3
-		movel(p[.2373, -.3509, .5556, 2.870, -1.2405, -0.08], a=1.2, v=0.25, r=0)
-		#lower_into_box 3
-		movel(p[.2373, -.3513, .5255, 2.870, -1.2404, -0.08], a=1.2, v=0.25, r=0)
-		##Open gripper of UR5
-		popup("Gripper opens","Note",False,False,blocking=True)
 		rq_open_and_wait()
-		#Towards or exit box 3
-		movel(p[.2373, -.3509, .5556, 2.870, -1.2405, -0.08], a=1.2, v=0.25, r=0)
-		#middle_pos / approach_point
-		movel(p[-.033, -.2006, .49368, 1.2414, -2.8728, -0.0105], a=1.2, v=0.25, r=0)	
-		#Pick and Place Top_frame done
-		popup("Part scan and sorting complete","Note",False,False,blocking=True)
+		#move to prepickup position
 	end
 	
 	def zListSort(x):
@@ -580,7 +510,7 @@ def main():
 		return x
 	end
 	
-	def extractPickPoseAlias(partData):
+	def extractPickPoseAlias(partData)
 		return partData[23]
 	end
 		
@@ -589,51 +519,129 @@ def main():
 	PerformAlignment()
 	SetState(1,"Nut")
 	scancounter=0
-	while 1:
-		while scancounter<3:
-			Trigger(1)
-			LocateBin("Job")
-			partData1=LocatePart("Nut")
-			pos1=extractPose(partData1)
-			partData2=LocatePart("Conrod")
-			pos2=extractPose(partData2)
-			partData3=LocatePart("TopFrame")
-			pos3=extractPose(partData3)
-			zlist=[pos1[2],pos2[2],pos3[2]]
-			zlist = zListSort(zlist)
-			if zlist[0]==0 and zlist[1]==0 and zlist[2]==0:
-				scancounter=scancounter+1
-			else:
+	while scancounter<3:
+		Trigger(1)
+		LocateBin("Job")
+		partData1=LocatePart("Nut")
+		pos1=extractPose(partData1)
+		partData2=LocatePart("Conrod")
+		pos2=extractPose(partData2)
+		partData3=LocatePart("TopFrame")
+		pos3=extractPose(partData3)
+		zlist=[pos1[2],pos2[2],pos3[2]]
+		zlist = zListSort(zlist)
+		for x (0,len(zlist):
+			if zlist[-1]==0
+				scancounter+=1
+				break
+			
+			elif zlist[-1]==pos1[2]:				#Compare data to see if matches
 				scancounter=0
-				if zlist[0]==0:
-					pass
-				elif zlist[0]==pos1[2]:
-					pickNut(partData1)
-				elif zlist[0]==pos2[2]:
-					pickConrod(partData2)
-				elif zlist[0]==pos3[2]:
-					pickTopFrame(partData3)
-				end
-					
-				if zlist[1]==0:
-					pass
-				elif zlist[1]==pos1[2]: 
-					pickNut(partData1)
-				elif zlist[1]==pos2[2]:
-					pickConrod(partData2)
-				elif zlist[1]==pos3[2]:
-					pickTopFrame(partData3)
-				end
-				if zlist[2]==0:
-					pass
-				elif zlist[2]==pos1[2]:
-					pickNut(partData1)
-				elif zlist[2]==pos2[2]:
-					pickConrod(partData2)
-				elif zlist[2]==pos3[2]:
-					pickTopFrame(partData3)
-				end
+				zlist.remove(pos1[2]])			#remove the largest number from list
+				pos=pos1							#Substitute the variable pos
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+				##Open gripper
+				rq_open_and_wait()
+				movep(pos)
+				##Close gripper
+				rq_close_and_wait()
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 4
+				movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
+				##move to box 1
+				popup("Moving to Box 1","Note",False,False,blocking=True)
+				#middle_pos
+				movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+				#waypoint 24
+				movel(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
+				#scanning
+				movel(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#lower_into_box
+				movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
+				##Open gripper of UR5
+				rq_open_and_wait()
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#middle_pos
+				movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
 				
+			elif zlist[-1]==pos2[2]:
+				scancounter=0
+				pos=pos2
+				zlist.remove(pos2[2])
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+				##Open gripper
+				rq_open_and_wait()
+				movep(pos)
+				##Close gripper
+				rq_close_and_wait()
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 4
+				movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
+				##move to box 2
+				popup("Moving to Box 2","Note",False,False,blocking=True)
+				#middle_pos
+				movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+				#waypoint 24
+				movel(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
+				#scanning
+				movel(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#lower_into_box
+				movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
+				##Open gripper of UR5
+				rq_open_and_wait()
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#middle_pos
+				movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+				
+			elif zlist[-1]==pos3[2]:
+				scancounter=0
+				pos=pos3 
+				zlist.remove(pos3[2])
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+				#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+				##Open gripper
+				rq_open_and_wait()
+				movep(pos)
+				##Close gripper
+				rq_close_and_wait()
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 4
+				movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
+				##move to box 3
+				popup("Moving to Box 3","Note",False,False,blocking=True)
+				#middle_pos
+				movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+				#waypoint 24
+				movel(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
+				#scanning
+				movel(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#lower_into_box
+				movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
+				##Open gripper of UR5
+				rq_open_and_wait()
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#middle_pos
 			end
 		end
 	end
