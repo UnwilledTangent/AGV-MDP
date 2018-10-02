@@ -109,7 +109,7 @@ def main():
 			popup("Expected Part message,Received Wrong type")     
 		end
 		
-		if receivedPartMsg[2]==111 and receivedPartMsg[2]==112 and receivedPartMsg[2]==113 and receivedPartMsg[2]==114:
+		if receivedPartMsg[2]==111 or receivedPartMsg[2]==112 or receivedPartMsg[2]==113 or receivedPartMsg[2]==114:
 			receivedPartMsg=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 		elif receivedPartMsg[2]!=0 and receivedPartMsg[2]!=3 and receivedPartMsg[2]!=111 and receivedPartMsg[2]!=112 and receivedPartMsg[2]!=113 and receivedPartMsg[2]!=114: #if result not OK and not a license error
 			errorHandler(receivedPartMsg[1])
