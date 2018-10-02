@@ -419,13 +419,10 @@ def main():
 		end
 	end
 
-<<<<<<< HEAD
 	def pickConrod(Data)
 		pos=extractPose(Data)
 		pickPose=extractPickPoseAlias(Data)
-=======
 	def pickConrod():
->>>>>>> 71c73468525f1c7703a6647e2fa9fd4ef68b4b85
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
 		##Open gripper
@@ -434,7 +431,6 @@ def main():
 		##Close gripper
 		rq_close_and_wait()
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-<<<<<<< HEAD
 		#movel(p[],a=1.2,v=0.25, r=0) home position
 		if pickPose=="Handle":
 			movel(p[0.27476,-0.25024,592.88,1.2091,-2.9005,-0.0059],a=1.2,v=0.25,r=0)
@@ -450,7 +446,6 @@ def main():
 	
 	def pickNut(Data)
 		pos=extractPose(Data)
-=======
 		#Begin to scan and place part into box
 		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
 		#ready to scan
@@ -477,7 +472,6 @@ def main():
 	end
 	
 	def pickNut():
->>>>>>> 71c73468525f1c7703a6647e2fa9fd4ef68b4b85
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
 		##Open gripper
@@ -486,7 +480,6 @@ def main():
 		##Close gripper
 		rq_close_and_wait()
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-<<<<<<< HEAD
 		#movep(p[],a=1.2,v=0.25, r=0) mid position
 		#move to scan
 		#rotate object by 60 degrees
@@ -496,7 +489,6 @@ def main():
 	def pickTopFrame(Data):
 		pos=extractPose(Data)
 		pickPose=extractPickPoseAlias(Data)
-=======
 		#Begin to scan and place part into box
 		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
 		#ready to scan
@@ -525,7 +517,6 @@ def main():
 	end
 	
 	def pickTopframe():
->>>>>>> 71c73468525f1c7703a6647e2fa9fd4ef68b4b85
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
 		##Open gripper
@@ -534,7 +525,6 @@ def main():
 		##Close gripper
 		rq_close_and_wait()
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-<<<<<<< HEAD
 		#movep(p[],a=1.2,v=0.25, r=0) mid position
 		if pickPose=="Mid":
 			#move to scan
@@ -546,8 +536,6 @@ def main():
 			#move to scan
 		end
 		#move to place in box 3
-		
-=======
 		#Begin to scan and place part into box
 		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
 		#ready to scan
@@ -573,7 +561,6 @@ def main():
 		movel(p[-.033, -.2006, .49368, 1.2414, -2.8728, -0.0105], a=1.2, v=0.25, r=0)	
 		#Pick and Place Top_frame done
 		popup("Part scan and sorting complete","Note",False,False,blocking=True)
->>>>>>> 71c73468525f1c7703a6647e2fa9fd4ef68b4b85
 	end
 	
 	def zListSort(x):
