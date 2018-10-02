@@ -373,70 +373,67 @@ def main():
 		elif errorNumber==137:
 			popup("PLB error 137:Invalid Z axis direction")
 		end	  
-	end   
-	
+	end
 
-  end
-  
-  def errorHandler(errorNumber): #Function returning a popup error message according to the error number from PLB. INPUT=int the PLB error number.
-    if errorNumber==-1:
-      popup("PLB error -1:Unexpected Error")
-    elif errorNumber==1:
-      popup("PLB error 1:Robot communication error")
-	elif errorNumber==2:
-      popup("PLB error 2:Sensor Error")
-	elif errorNumber==3:
-      popup("PLB error 3:License Error")
-	elif errorNumber==21:
-      popup("PLB error 21:Unknown Job")
-	elif errorNumber==22:
-      popup("PLB error 22:Invalid Job")
-	elif errorNumber==31:
-      popup("PLB error 31:Set state failed")
-	elif errorNumber==32:
-      popup("PLB error 32:PLB Busy")
-	elif errorNumber==41:
-      popup("PLB error 41:Trigger error")
-	elif errorNumber==42:
-      popup("PLB error 42:Invalid State for Triggering")
-	elif errorNumber==43:
-      popup("PLB error 43:Overtriggered")
-	elif errorNumber==44:
-      popup("PLB error 44:Acquisition Failed")
-	elif errorNumber==101:
-      popup("PLB error 101:No image")
-	elif errorNumber==102:
-      popup("PLB error 102:Invalid State")
-	elif errorNumber==103:
-      popup("PLB error 103:PLB Busy")
-	elif errorNumber==111:
-      popup("PLB error 111:No part located")
-	elif errorNumber==112:
-      popup("PLB error 112:Part Overlapped")
-	elif errorNumber==113:
-      popup("PLB error 113:Gripper collision")
-	elif errorNumber==114:
-      popup("PLB error 114:Bin empty")
-	elif errorNumber==121:
-      popup("PLB error 121:Bin not found")
-	elif errorNumber==131:
-      popup("PLB error 131:Alignment target not found")
-	elif errorNumber==132:
-      popup("PLB error 132: Failed to add Alignment point")
-    elif errorNumber==133:
-      popup("PLB error 133: Too few points in Alignment")
-    elif errorNumber==134:
-      popup("PLB error 134:Alignment calculation failed")
-    elif errorNumber==135:
-      popup("PLB error 135:Alignment deviation Threshold exceeded")
-    elif errorNumber==136:
-      popup("PLB error 136:Too much scaling")	 
-    elif errorNumber==137:
-      popup("PLB error 137:Invalid Z axis direction")
-    end
-  end
-  
-  def pickConrod()
+	def errorHandler(errorNumber): #Function returning a popup error message according to the error number from PLB. INPUT=int the PLB error number.
+		if errorNumber==-1:
+			popup("PLB error -1:Unexpected Error")
+		elif errorNumber==1:
+			popup("PLB error 1:Robot communication error")
+		elif errorNumber==2:
+			popup("PLB error 2:Sensor Error")
+		elif errorNumber==3:
+			popup("PLB error 3:License Error")
+		elif errorNumber==21:
+			popup("PLB error 21:Unknown Job")
+		elif errorNumber==22:
+			popup("PLB error 22:Invalid Job")
+		elif errorNumber==31:
+			popup("PLB error 31:Set state failed")
+		elif errorNumber==32:
+			popup("PLB error 32:PLB Busy")
+		elif errorNumber==41:
+			popup("PLB error 41:Trigger error")
+		elif errorNumber==42:
+			popup("PLB error 42:Invalid State for Triggering")
+		elif errorNumber==43:
+			popup("PLB error 43:Overtriggered")
+		elif errorNumber==44:
+			popup("PLB error 44:Acquisition Failed")
+		elif errorNumber==101:
+			popup("PLB error 101:No image")
+		elif errorNumber==102:
+			popup("PLB error 102:Invalid State")
+		elif errorNumber==103:
+			popup("PLB error 103:PLB Busy")
+		elif errorNumber==111:
+			popup("PLB error 111:No part located")
+		elif errorNumber==112:
+			popup("PLB error 112:Part Overlapped")
+		elif errorNumber==113:
+			popup("PLB error 113:Gripper collision")
+		elif errorNumber==114:
+			popup("PLB error 114:Bin empty")
+		elif errorNumber==121:
+			popup("PLB error 121:Bin not found")
+		elif errorNumber==131:
+			popup("PLB error 131:Alignment target not found")
+		elif errorNumber==132:
+			popup("PLB error 132: Failed to add Alignment point")
+		elif errorNumber==133:
+			popup("PLB error 133: Too few points in Alignment")
+		elif errorNumber==134:
+			popup("PLB error 134:Alignment calculation failed")
+		elif errorNumber==135:
+			popup("PLB error 135:Alignment deviation Threshold exceeded")
+		elif errorNumber==136:
+			popup("PLB error 136:Too much scaling")	 
+		elif errorNumber==137:
+			popup("PLB error 137:Invalid Z axis direction")
+		end
+	end
+
+	def pickConrod()
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
 		##Open gripper
@@ -470,11 +467,10 @@ def main():
 		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
 		##move to home position of UR5
 		popup("Moving to Home Position","Note",False,False,blocking=True)
-		
-  end
+	end
 	
 	def picknut()
-	movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
 		##Open gripper
 		rq_open_and_wait()
@@ -509,11 +505,10 @@ def main():
 		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
 		##move to home position of UR5
 		popup("Moving to Home Position","Note",False,False,blocking=True)
-		
-  end
+	end
 	
 	def picktopframe()
-	movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
 		##Open gripper
 		rq_open_and_wait()
@@ -546,138 +541,138 @@ def main():
 		movel(p[-.033, -.2006, .49368, 1.2414, -2.8728, -0.0105], a=1.2, v=0.25, r=0)	
 		##move to home position of UR5
 		popup("Moving to Home Position","Note",False,False,blocking=True)
+	end
 		
-  end
-		
-  
-  Connect_To_PLB()
-  rq_activate()
-  PerformAlignment()
-  SetState(1,"Nut")
-  scancounter=0
-  while scancounter<3:
-	  Trigger(1)
-	  LocateBin("Job")
-	  partData1=LocatePart("Nut")
-	  pos1=extractPose(partData1)
-	  partData2=LocatePart("Conrod")
-	  pos2=extractPose(partData2)
-	  partData3=LocatePart("TopFrame")
-	  pos3=extractPose(partData3)
-	  zlist=[pos1[2],pos2[2],pos3[2]]
-	  zlist.sort()
-	  for x (0,len(zlist):
-		if zlist[-1]==0
-			scancounter+=1
-			break
-		
-		elif zlist[-1]==pos1[2]:				#Compare data to see if matches
-			scancounter=0
-			zlist.remove(pos1[2]])			#remove the largest number from list
-			pos=pos1							#Substitute the variable pos
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-			##Open gripper
-			rq_open_and_wait()
-			movep(pos)
-			##Close gripper
-			rq_close_and_wait()
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-			##move to home position of UR5
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#waypoint 4
-			movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
-			##move to box 1
-			popup("Moving to Box 1","Note",False,False,blocking=True)
-			#middle_pos
-			movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
-			#waypoint 24
-			movel(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
-			#scanning
-			movel(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
-			#waypoint 6
-			movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
-			#lower_into_box
-			movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
-			##Open gripper of UR5
-			rq_open_and_wait()
-			##move to home position of UR5
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#waypoint 6
-			movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
-			#middle_pos
-			movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+	Connect_To_PLB()
+	rq_activate()
+	PerformAlignment()
+	SetState(1,"Nut")
+	scancounter=0
+	while scancounter<3:
+		Trigger(1)
+		LocateBin("Job")
+		partData1=LocatePart("Nut")
+		pos1=extractPose(partData1)
+		partData2=LocatePart("Conrod")
+		pos2=extractPose(partData2)
+		partData3=LocatePart("TopFrame")
+		pos3=extractPose(partData3)
+		zlist=[pos1[2],pos2[2],pos3[2]]
+		zlist.sort()
+		for x (0,len(zlist):
+			if zlist[-1]==0
+				scancounter+=1
+				break
 			
-		elif zlist[-1]==pos2[2]:
-			scancounter=0
-			pos=pos2
-			zlist.remove(pos2[2])
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-			##Open gripper
-			rq_open_and_wait()
-			movep(pos)
-			##Close gripper
-			rq_close_and_wait()
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-			##move to home position of UR5
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#waypoint 4
-			movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
-			##move to box 2
-			popup("Moving to Box 2","Note",False,False,blocking=True)
-			#middle_pos
-			movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
-			#waypoint 24
-			movel(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
-			#scanning
-			movel(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
-			#waypoint 6
-			movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
-			#lower_into_box
-			movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
-			##Open gripper of UR5
-			rq_open_and_wait()
-			##move to home position of UR5
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#waypoint 6
-			movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
-			#middle_pos
-			movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
-			
-		elif zlist[-1]==pos3[2]:
-			scancounter=0
-			pos=pos3 
-			zlist.remove(pos3[2])
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-			#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
-			##Open gripper
-			rq_open_and_wait()
-			movep(pos)
-			##Close gripper
-			rq_close_and_wait()
-			movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-			##move to home position of UR5
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#waypoint 4
-			movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
-			##move to box 3
-			popup("Moving to Box 3","Note",False,False,blocking=True)
-			#middle_pos
-			movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
-			#waypoint 24
-			movel(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
-			#scanning
-			movel(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
-			#waypoint 6
-			movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
-			#lower_into_box
-			movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
-			##Open gripper of UR5
-			rq_open_and_wait()
-			##move to home position of UR5
-			popup("Moving to Home Position","Note",False,False,blocking=True)
-			#waypoint 6
-			movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
-			#middle_pos
+			elif zlist[-1]==pos1[2]:				#Compare data to see if matches
+				scancounter=0
+				zlist.remove(pos1[2]])			#remove the largest number from list
+				pos=pos1							#Substitute the variable pos
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+				##Open gripper
+				rq_open_and_wait()
+				movep(pos)
+				##Close gripper
+				rq_close_and_wait()
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 4
+				movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
+				##move to box 1
+				popup("Moving to Box 1","Note",False,False,blocking=True)
+				#middle_pos
+				movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+				#waypoint 24
+				movel(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
+				#scanning
+				movel(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#lower_into_box
+				movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
+				##Open gripper of UR5
+				rq_open_and_wait()
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#middle_pos
+				movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+				
+			elif zlist[-1]==pos2[2]:
+				scancounter=0
+				pos=pos2
+				zlist.remove(pos2[2])
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+				##Open gripper
+				rq_open_and_wait()
+				movep(pos)
+				##Close gripper
+				rq_close_and_wait()
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 4
+				movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
+				##move to box 2
+				popup("Moving to Box 2","Note",False,False,blocking=True)
+				#middle_pos
+				movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+				#waypoint 24
+				movel(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
+				#scanning
+				movel(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#lower_into_box
+				movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
+				##Open gripper of UR5
+				rq_open_and_wait()
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#middle_pos
+				movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+				
+			elif zlist[-1]==pos3[2]:
+				scancounter=0
+				pos=pos3 
+				zlist.remove(pos3[2])
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+				#PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
+				##Open gripper
+				rq_open_and_wait()
+				movep(pos)
+				##Close gripper
+				rq_close_and_wait()
+				movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 4
+				movel(p[-353.76, -326.16, 555.47, 1.1881, -2.8890, -0.0133], a=1.2, v=0.25, r=0)
+				##move to box 3
+				popup("Moving to Box 3","Note",False,False,blocking=True)
+				#middle_pos
+				movel(p[184.03, -213.68, 570.52, 1.1752, -2.9189, -0.0091], a=1.2, v=0.25, r=0)
+				#waypoint 24
+				movel(p[197.68, -210.87, 617.89, 1.1754, -2.9188, -0.0095], a=1.2, v=0.25, r=0)
+				#scanning
+				movel(p[296.03, -258.02, 590.58, 1.1551, -2.9177, -0.0457], a=1.2, v=0.25, r=0)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#lower_into_box
+				movel(p[427.84, -199.22, 522.64, 2.8723, -1.2541, -0.0347], a=1.2, v=0.25, r=0)
+				##Open gripper of UR5
+				rq_open_and_wait()
+				##move to home position of UR5
+				popup("Moving to Home Position","Note",False,False,blocking=True)
+				#waypoint 6
+				movel(p[427.85, -199.30, 554.66, 2.8721, -1.2543, -0.035], a=1.2, v=0.25, r=0)
+				#middle_pos
+			end
+		end
 	end
 end
 
