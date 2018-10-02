@@ -433,7 +433,7 @@ def main():
 		end
 	end
 
-	def pickConrod()
+		def pickConrod():
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
 		##Open gripper
@@ -442,34 +442,32 @@ def main():
 		##Close gripper
 		rq_close_and_wait()
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		##Begin to scan and place part into box
+		#Begin to scan and place part into box
 		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
-		#waypoint 4
+		#ready to scan
 		movel(p[-.3537, -.3261, .5554, 1.1882,-2.8890, -0.0134], a=1.2, v=0.25, r=0)
-		##Lets begin and move for box 1 "conrod"
+		#Lets begin and move for box 1 "conrod"
 		popup("Moving to Box 1","Note",False,False,blocking=True)
 		#middle_pos / approach_point
 		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
-		#waypoint 24 / additional waypoint
-		movel(p[.19768, -.2108, .6179, 1.175, -2.918, -0.009], a=1.2, v=0.25, r=0)
 		#scanning
 		movel(p[.2944, -.2832, .5928, 1.209, -2.900, -0.006], a=1.2, v=0.25, r=0)
-		#waypoint 6 / towards or exit box 1
+		#Towards or exit box 1
 		movel(p[.4278, -.1992, .5544, 2.872, -1.254, -0.035], a=1.2, v=0.25, r=0)
 		#lower_into_box 1
 		movel(p[.4278, -.1991, .5226, 2.872, -1.254, -0.035], a=1.2, v=0.25, r=0)
 		##Open gripper of UR5
 		popup("Gripper opens","Note",False,False,blocking=True)
 		rq_open_and_wait()
-		#waypoint 6 / towards or exit box 1
+		#Towards or exit box 1
 		movel(p[.4278, -.1992, .5544, 2.872, -1.254, -0.035], a=1.2, v=0.25, r=0)
 		#middle_pos / approach_point
 		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
-		##move to home position of UR5
-		popup("Moving to Home Position","Note",False,False,blocking=True)
+		#Pick and Place Conrod done
+		popup("Part scan and sorting complete","Note",False,False,blocking=True)
 	end
 	
-	def picknut()
+	def pickNut():
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
 		##Open gripper
@@ -478,36 +476,34 @@ def main():
 		##Close gripper
 		rq_close_and_wait()
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		##Begin to scan and place part into box
+		#Begin to scan and place part into box
 		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
-		#waypoint 4
+		#ready to scan
 		movel(p[-.3537, -.3261, .5554, 1.195,-2.8860, -0.0134], a=1.2, v=0.25, r=0)
-		##Lets begin and move for box 2 "nut"
+		#Lets begin and move for box 2 "nut"
 		popup("Moving to Box 2","Note",False,False,blocking=True)
 		#middle_pos / approach_point
 		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
-		#waypoint 24 / additional waypoint
-		movel(p[.2269, -.2044, .607, 1.175, -2.918, -0.009], a=1.2, v=0.25, r=0)
 		#scanning
 		movel(p[.2960, -.2580, .5905, .368, -3.109, -0.0435], a=1.2, v=0.25, r=0)
 		#scanning2
 		movel(p[.2960, -.2580, .5905, 2.003, -2.426, -0.0456], a=1.2, v=0.25, r=0)
-		#waypoint 6 / towards or exit box 2
+		#Towards or exit box 2
 		movel(p[.1294, -.4814, .5456, 1.159, -2.915, 0.0330], a=1.2, v=0.25, r=0)
 		#lower_into_box 2
 		movel(p[.1294, -.4813, .5301, 1.159, -2.915, 0.033], a=1.2, v=0.25, r=0)
 		##Open gripper of UR5
 		popup("Gripper opens","Note",False,False,blocking=True)
 		rq_open_and_wait()
-		#waypoint 6 / towards or exit box 2
+		#Towards or exit box 2
 		movel(p[.1294, -.4814, .5456, 1.159, -2.915, 0.0330], a=1.2, v=0.25, r=0)
 		#middle_pos / approach_point
 		movel(p[.1840, -.2136, .5705, 1.1752, -2.918, -0.009], a=1.2, v=0.25, r=0)
-		##move to home position of UR5
-		popup("Moving to Home Position","Note",False,False,blocking=True)
+		#Pick and Place Nut done
+		popup("Part scan and sorting complete","Note",False,False,blocking=True)
 	end
 	
-	def picktopframe()
+	def pickTopframe():
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0])) #PRE-PICK POS AT A POSITION 100mm IN NEGATIVE TOOL Z DIRECTION FROM PICK POSITION
 		#Default Home position = {movel(p[-.0888, -.2550, .9775, 1.026, 2.5916, -2.3545], a=1.2, v=0.25, r=0)}
 		##Open gripper
@@ -516,31 +512,31 @@ def main():
 		##Close gripper
 		rq_close_and_wait()
 		movep(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		##Begin to scan and place part into box
+		#Begin to scan and place part into box
 		popup("Ready to begin Part scanning and sorting","Note",False,False,blocking=True)
-		#waypoint 4
+		#ready to scan
 		movel(p[-.3537, -.3261, .55549, 1.188,-2.8890, -0.0134], a=1.2, v=0.25, r=0)
-		##Lets begin and move for box 3 "top_frame"
+		#Lets begin and move for box 3 "top_frame"
 		popup("Moving to Box 3","Note",False,False,blocking=True)
 		#middle_pos / approach_point
 		movel(p[-.033, -.2006, .49368, 1.2414, -2.8728, -0.0105], a=1.2, v=0.25, r=0)
-		#waypoint 24 
+		#rotate to scan 
 		movel(p[.2525, -.2618, .63465, 1.175, -0.706, 1.7678], a=1.2, v=0.25, r=0)
 		#scanning
 		movel(p[.3207, -.2884, .6296, 1.7570, -.7070, 1.7679], a=1.2, v=0.25, r=0)
-		#waypoint 5 / towards or exit box 3
+		#Towards or exit box 3
 		movel(p[.2373, -.3509, .5556, 2.870, -1.2405, -0.08], a=1.2, v=0.25, r=0)
 		#lower_into_box 3
 		movel(p[.2373, -.3513, .5255, 2.870, -1.2404, -0.08], a=1.2, v=0.25, r=0)
 		##Open gripper of UR5
 		popup("Gripper opens","Note",False,False,blocking=True)
 		rq_open_and_wait()
-		#waypoint 5 / towards or exit box 3
+		#Towards or exit box 3
 		movel(p[.2373, -.3509, .5556, 2.870, -1.2405, -0.08], a=1.2, v=0.25, r=0)
 		#middle_pos / approach_point
 		movel(p[-.033, -.2006, .49368, 1.2414, -2.8728, -0.0105], a=1.2, v=0.25, r=0)	
-		##move to home position of UR5
-		popup("Moving to Home Position","Note",False,False,blocking=True)
+		#Pick and Place Top_frame done
+		popup("Part scan and sorting complete","Note",False,False,blocking=True)
 	end
 	
 	def zListSort(x):
