@@ -386,6 +386,10 @@ def main():
 		end
 		return x
 	end
+	
+	def extractPickPoseAlias(partData)
+		return partData[23]
+	end
 
 	Connect_To_PLB()
 	# rq_activate()
