@@ -427,6 +427,8 @@ def main():
 			movel(p[0.339,-0.28097,0.62956,1.7609,-0.6180,1.7078],a=1.2,v=0.25,r=0)
 		elif pickPose=="Right":
 			movel(p[0.29356,-0.30756,0.62955,1.7571,-0.7069,1.7680],a=1.2,v=0.25,r=0)
+		#elif pickPose=="Front":
+		#	movel(p[.32001,-.27648,.62988,1.1070,-2.419,2.5088],a=1.2,v=0.25,r=0)
 		end
 		#move to place in box 3
 		rq_open_and_wait()
@@ -456,7 +458,7 @@ def main():
 		
 	Connect_To_PLB()
 	rq_activate()
-	PerformAlignment()
+	#PerformAlignment()
 	SetState(1,"Nut")
 	scancounter=0
 	while 1:
