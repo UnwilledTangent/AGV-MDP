@@ -386,6 +386,7 @@ def main():
 	
 	def pickNut(Data)
 		pos=extractPose(Data)
+		pickPose=extractPickPoseAlias(Data)
 		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
 		rq_open_and_wait()
 		movel(pos)
