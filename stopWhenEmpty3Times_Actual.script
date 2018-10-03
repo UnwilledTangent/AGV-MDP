@@ -43,7 +43,7 @@ def main():
 			return receivedTrigMsg
 		end
 		if type==3: #PartMsg
-			receivedPartMsg=getMsg(22)
+			receivedPartMsg=getMsg(24)
 			return receivedPartMsg
 		end
 		if type==4: #BinMsg
