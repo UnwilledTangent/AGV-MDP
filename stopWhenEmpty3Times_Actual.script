@@ -463,29 +463,29 @@ def main():
 			else
 				if zlist[0]==0:
 					pass
-				elif zlist[0]==pos1:
+				elif zlist[0]==pos1[2]:
 					pickNut(partData1)
-				elif zlist[0]==pos2:
+				elif zlist[0]==pos2[2]:
 					pickConrod(partData2)
-				elif zlist[0]=pos3:
+				elif zlist[0]==pos3[2]:
 					pickTopFrame(partData3)
 				end
 				if zlist[1]==0:
 					pass
-				elif zlist[1]==pos1:
+				elif zlist[1]==pos1[2]:
 					pickNut(partData1)
-				elif zlist[1]==pos2:
+				elif zlist[1]==pos2[2]:
 					pickConrod(partData2)
-				elif zlist[1]=pos3:
+				elif zlist[1]==pos3[2]:
 					pickTopFrame(partData3)
 				end
 				if zlist[2]==0:
 					pass
-				elif zlist[2]==pos1:
+				elif zlist[2]==pos1[2]:
 					pickNut(partData1)
-				elif zlist[2]==pos2:
+				elif zlist[2]==pos2[2]:
 					pickConrod(partData2)
-				elif zlist[2]=pos3:
+				elif zlist[2]==pos3[2]:
 					pickTopFrame(partData3)
 				end
 			end
