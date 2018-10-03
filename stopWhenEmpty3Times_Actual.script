@@ -361,8 +361,6 @@ def main():
 		end	  
 	end
 
-
-
 	def pickConrod(Data)
 		pos=extractPose(Data)
 		pickPose=extractPickPoseAlias(Data)
@@ -424,7 +422,7 @@ def main():
 		movel(p[.23018,-.26240,.74540,1.4397,-3.1345,1.3923],a=1.2,v=0.25, r=0)
 		#move to scan
 		if pickPose=="Mid":
-			movel(p[-0.01419,-0.16248,0.85071,0.5642,-1.52,0.6662],a=1.2,v=0.25,r=0)
+			movel(p[-0.01419,-0.16248,0.62957,0.5642,-1.52,0.6662],a=1.2,v=0.25,r=0)
 		elif pickPose=="Left":
 			movel(p[0.339,-0.28097,0.62956,1.7609,-0.6180,1.7078],a=1.2,v=0.25,r=0)
 		elif pickPose=="Right":
