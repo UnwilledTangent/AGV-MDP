@@ -77,7 +77,7 @@ def main():
 			SendString(";")
 			receivedStateMsg=ReceiveCommand(1)
 		if receivedStateMsg[1]!=1:
-			popup("Expected 	state message,Received Wrong type")
+			popup("Expected state message,Received Wrong type")
 		end
 		if receivedStateMsg[2]!=0:
 			errorHandler(receivedStateMsg[2])
@@ -246,7 +246,7 @@ def main():
 	
 		SaveAlignment() 
 	
-	# Verify Alignment with 2 points
+		# Verify Alignment with 2 points
 		SetState(1, "Nut")
 		movel(p[0.13, 0.565, 0.265, 4.7028, 0.3435, -0.2538], a=1.2, v=0.25, r=0.025)
 		Trigger(1)	
