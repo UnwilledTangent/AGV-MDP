@@ -366,12 +366,17 @@ def main():
 	def pickConrod(Data)
 		pos=extractPose(Data)
 		pickPose=extractPickPoseAlias(Data)
+		#move above object
 		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
 		rq_open_and_wait()
+		#move to object
 		movel(pos)
 		rq_close_and_wait()
+		#move object up
 		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		#movel(p[],a=1.2,v=0.25, r=0) mid position
+		#move UR to mid position
+		movel(p[.23018,-.26240,.74540,1.4397,-3.1345,1.3923],a=1.2,v=0.25, r=0)
+		#move to scan
 		if pickPose=="Handle":
 			movel(p[0.27476,-0.25024,0.59288,1.2091,-2.9005,-0.0059],a=1.2,v=0.25,r=0)
 		elif pickPose=="Head":
@@ -387,12 +392,16 @@ def main():
 	def pickNut(Data)
 		pos=extractPose(Data)
 		pickPose=extractPickPoseAlias(Data)
+		#move above object
 		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
 		rq_open_and_wait()
+		#move to object
 		movel(pos)
 		rq_close_and_wait()
+		#move object up
 		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		#movel(p[],a=1.2,v=0.25, r=0) mid position
+		#mid position
+		movel(p[.23018,-.26240,.74540,1.4397,-3.1345,1.3923],a=1.2,v=0.25, r=0)
 		#move to scan
 		#rotate object
 		#place in box 2
@@ -403,18 +412,23 @@ def main():
 	def pickTopFrame(Data):
 		pos=extractPose(Data)
 		pickPose=extractPickPoseAlias(Data)
-		rq_open_and_wait()
+		#move above object
 		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
+		rq_open_and_wait()
+		#move to object
 		movel(pos)
 		rq_close_and_wait()
+		#move object up
 		movel(pose_trans(pos,p[0,0,-0.100,0,0,0]))
-		#movel(p[],a=1.2,v=0.25, r=0) mid position
+		#mid position
+		movel(p[.23018,-.26240,.74540,1.4397,-3.1345,1.3923],a=1.2,v=0.25, r=0)
+		#move to scan
 		if pickPose=="Mid":
-		movel(p[-0.01419,-0.16248,0.85071,0.5642,-1.52,0.6662],a=1.2,v=0.25,r=0)
+			movel(p[-0.01419,-0.16248,0.85071,0.5642,-1.52,0.6662],a=1.2,v=0.25,r=0)
 		elif pickPose=="Left":
-		movel(p[0.339,-0.28097,0.62956,1.7609,-0.6180,1.7078],a=1.2,v=0.25,r=0)
+			movel(p[0.339,-0.28097,0.62956,1.7609,-0.6180,1.7078],a=1.2,v=0.25,r=0)
 		elif pickPose=="Right":
-		movel(p[0.29356,-0.30756,0.62955,1.7571,-0.7069,1.7680],a=1.2,v=0.25,r=0)
+			movel(p[0.29356,-0.30756,0.62955,1.7571,-0.7069,1.7680],a=1.2,v=0.25,r=0)
 		end
 		#move to place in box 3
 		rq_open_and_wait()
