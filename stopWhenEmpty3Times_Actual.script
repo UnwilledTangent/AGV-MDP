@@ -397,42 +397,32 @@ def main():
 	def pickNut(Data)
 		pos = extractPose(Data)
 		pickPose = extractPickPoseAlias(Data)
-		# move above object
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))
+		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))#move above object
 		rq_open_and_wait()
-		# move to object
-		movel(pos)
+		movel(pos)#move to object
 		rq_close_and_wait()
-		# move object up
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))
-		# mid position
-		movel(p[.23018, -.26240, .74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0)
-		# move to scan
-		# After Scanning,
-		#movel(pose_trans(pos, p[0, 0, -0.050, 0, 0, 0]))
-		# TO clear the Bin and allow for ease of dropping the parts into the correct zones / box()
-		# move to place in box 2
-		# Lower into box 2
+		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))#move above object
+		movel(p[0.23018, -0.26240, 0.74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0)#mid position
+		movel(p[0.29606,-0.25806,0.59056,0.3678,-3.1090,-0.0428],a=1.2,v=0.25,r=0) #scan face 1
+		movel(p[0.29606,-0.25806,0.59056,2.0037,-2.4270,-0.0450],a=1.2,v=0.25,r=0) #scan face 2
+		movel(p[]a=1.2,v=0.25,r=0)#move above box 3
+		movel(p[]a=1.2,v=0.25,r=0)#move in box 3
 		rq_open_and_wait()
-		# move to place in box 2
-		# move to prepickup position
+		movel(p[]a=1.2,v=0.25,r=0)#move above box 3
+
+		
 	end
 	
 	def pickTopFrame(Data):
 		pos = extractPose(Data)
 		pickPose = extractPickPoseAlias(Data)
-		# move above object
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))
+		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))#move above object
 		rq_open_and_wait()
-		# move to object
-		movel(pos)
+		movel(pos)#move to object
 		rq_close_and_wait()
-		# move object up
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))
-		# mid position
-		movel(p[.23018, -.26240, .74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0)
-		# move to scan
-		if pickPose == "Mid":
+		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))#move above object
+		movel(p[.23018, -.26240, .74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0)#mid position
+		if pickPose == "Mid": #move to scan and sort
 			movel(p[0.32079,-0.28833,0.62955,1.7571,-0.7068,1.7679], a=1.2, v=0.25, r=0)#scan for mid pickup
 			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#above box 2
 			movel(p[0.23735,-0.35100,0.5260,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#in box 2
@@ -442,19 +432,26 @@ def main():
 			movel(p[0.339, -0.28097, 0.62956, 0.6105, 1.4705, -0.5992], a=1.2, v=0.25, r=0)#scanning for left leg
 			movel(p[0.339, -0.28097, 0.67956, 0.6105, 1.4705, -0.5992], a=1.2, v=0.25, r=0)#clear scanning area 
 			movel(p[0.2795,-0.32390,0.55565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#above box 2 for left
-			movel(p[],a=1.2,v=0.25,r=0)#in box 2 for left
+			movel(p[0.2795,-0.32390,0.52565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#in box 2 for left
 			rq_open_and_wait
-			movel(p[],a=1.2,v=0.25,r=0)#above box 2 for left
+			movel(p[0.2795,-0.32390,0.55565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#above box 2 for left
 			
 		elif pickPose == "Right":
 			movel(p[0.29356, -0.30756, 0.62955, 1.7571, -0.7069, 1.7680], a=1.2, v=0.25, r=0)
-		# elif pickPose=="Front":
-		# movel(p[.33030,-.26143,.63952,1.1070,-2.4184,2.5090],a=1.2,v=0.25,r=0)
-		# After Scanning,
-		#movel(pose_trans(pos, p[0, 0, -0.050, 0, 0, 0]))
-		# TO clear the Bin and allow for ease of dropping the parts into the correct zones / box()
+			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#above box 2
+			movel(p[0.23735,-0.35100,0.5260,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#in box 2
+			rq_close_and_wait
+			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#above box 2
+		elif pickPose=="Front":
+		movel(p[0.33030,-0.26143,0.63952,1.1070,-2.4184,2.5090],a=1.2,v=0.25,r=0)#scanning for front 
+		movel(p[0.33030,-0.26143,0.63952,1.1070,-2.4184,2.5090],a=1.2,v=0.25,r=0)#clear scanning area
+		movel(p[0.2795,-0.32390,0.55565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#above box 2 for left
+		movel(p[0.2795,-0.32390,0.52565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#in box 2 for left
+		rq_open_and_wait
+		movel(p[0.2795,-0.32390,0.55565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#above box 2 for left
+
 		end
-		# move to prepickup position
+		movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) # move to prepick position
 	end
 	
 	def zListSort(x):
