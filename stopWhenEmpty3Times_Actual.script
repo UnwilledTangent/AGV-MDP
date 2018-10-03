@@ -464,7 +464,7 @@ def main():
 	while 1:
 		while scancounter<3:
 			Trigger(1)
-			LocateBin("Job")
+			LocateBin("Nut")
 			partData1=LocatePart("Nut")
 			pos1=extractPose(partData1)
 			partData2=LocatePart("Conrod")
