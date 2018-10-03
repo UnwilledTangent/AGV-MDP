@@ -386,13 +386,12 @@ def main():
 			movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0)
 		end
 		# After Scanning,
-		#movel(pose_trans(pos, p[0, 0, -0.050, 0, 0, 0]))
-		# TO clear the Bin and allow for ease of dropping the parts into the correct zones / box()
-		# move to place in box 1
-		# lower into box 1
+		movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0)#above box 1
+		movel(p[0.42785,-0.19928,0.52380,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0)#in Box 1
 		rq_open_and_wait()
-		# move to place in box 1
-		# move to prepick position
+		movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0)#above box 1
+		
+		movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) # move to prepick position
 	end
 	
 	def pickNut(Data)
@@ -434,9 +433,19 @@ def main():
 		movel(p[.23018, -.26240, .74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0)
 		# move to scan
 		if pickPose == "Mid":
-			movel(p[-0.01419, -0.16248, 0.62957, 0.5642, -1.52, 0.6662], a=1.2, v=0.25, r=0)
+			movel(p[0.32079,-0.28833,0.62955,1.7571,-0.7068,1.7679], a=1.2, v=0.25, r=0)#scan for mid pickup
+			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#above box 2
+			movel(p[0.23735,-0.35100,0.5260,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#in box 2
+			rq_open_and_wait()
+			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#above box 2
 		elif pickPose == "Left":
-			movel(p[0.339, -0.28097, 0.62956, 1.7609, -0.6180, 1.7078], a=1.2, v=0.25, r=0)
+			movel(p[0.339, -0.28097, 0.62956, 0.6105, 1.4705, -0.5992], a=1.2, v=0.25, r=0)#scanning for left leg
+			movel(p[0.339, -0.28097, 0.67956, 0.6105, 1.4705, -0.5992], a=1.2, v=0.25, r=0)#clear scanning area 
+			movel(p[0.2795,-0.32390,0.55565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#above box 2 for left
+			movel(p[],a=1.2,v=0.25,r=0)#in box 2 for left
+			rq_open_and_wait
+			movel(p[],a=1.2,v=0.25,r=0)#above box 2 for left
+			
 		elif pickPose == "Right":
 			movel(p[0.29356, -0.30756, 0.62955, 1.7571, -0.7069, 1.7680], a=1.2, v=0.25, r=0)
 		# elif pickPose=="Front":
@@ -445,10 +454,6 @@ def main():
 		#movel(pose_trans(pos, p[0, 0, -0.050, 0, 0, 0]))
 		# TO clear the Bin and allow for ease of dropping the parts into the correct zones / box()
 		end
-		# move to place in box 3
-		# lower into box 3
-		rq_open_and_wait()
-		# move to place in box 3
 		# move to prepickup position
 	end
 	
@@ -475,7 +480,7 @@ def main():
 		
 	Connect_To_PLB()
 	rq_activate()
-	# PerformAlignment()
+	#PerformAlignment()
 	SetState(1, "Nut")
 	scancounter = 0
 	while 1:
