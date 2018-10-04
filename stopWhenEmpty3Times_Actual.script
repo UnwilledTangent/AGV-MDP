@@ -435,19 +435,21 @@ def main():
 			movel(p[0.339, -0.28097, 0.62956, 0.6105, 1.4705, -0.5992], a=1.2, v=0.25, r=0)#scanning for left leg
 		# After Scanning,
 			movel(p[0.339, -0.28097, 0.67956, 0.6105, 1.4705, -0.5992], a=1.2, v=0.25, r=0)#clear scanning area 
-			movel(p[0.2795,-0.32390,0.55565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#move above box 2 for left
-			movel(p[0.2795,-0.32390,0.52565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#move in box 2 for left
-			rq_open_and_wait
-			movel(p[0.2795,-0.32390,0.55565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#move above box 2 for left
+			#Required additional waypoint
+			movel(p[0.34370, -.29185, .66648, 1.0270, -2.7156, 2.3110],a=1.2,v=0.25,r=0)#move higher above scanning
+			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2 for left
+			movel(p[0.23735,-0.35100,0.5260,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move in box 2 for left
+			rq_open_and_wait()
+			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2 for left
 			
 		elif pickPose == "Right": #move to scan and sort
-			movel(p[0.29356, -0.30756, 0.62955, 1.7571, -0.7069, 1.7680], a=1.2, v=0.25, r=0)#Scanning for right leg
+			movel(p[0.28870, -0.29090, 0.62955, 1.7570, -0.7069, 1.7678], a=1.2, v=0.25, r=0)#Scanning for right leg , needs to change again
 			#no need to clear scanning area
 		# After Scanning,			
-			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2 for right
-			movel(p[0.23735,-0.35100,0.5260,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move in box 2 for right
+			movel(p[0.24444,-0.36368,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2 for right
+			movel(p[0.24453,-0.36370,0.53270,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move in box 2 for right
 			rq_close_and_wait
-			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2
+			movel(p[0.24444,-0.36368,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2
 		elif pickPose=="Front":
 			movel(p[0.33030,-0.26143,0.63952,1.1070,-2.4184,2.5090],a=1.2,v=0.25,r=0)#scanning for front
 		# After Scanning,
