@@ -367,18 +367,13 @@ def main():
 	def pickConrod(Data)
 		pos = extractPose(Data)
 		pickPose = extractPickPoseAlias(Data)
-		# move above object 10cm
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))
+		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) # move above object 10cm
 		rq_open_and_wait()
-		# move to object
-		movel(pos)
+		movel(pos) # move to object
 		rq_close_and_wait()
-		# move part up 10cm
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))
-		# move UR to mid position
-		movel(p[.23018, -.26240, .74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0)
-		# move to scan OLD
-		#if pickPose == "Handle":
+		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) # move part up 10cm
+		movel(p[.23018, -.26240, .74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0) # move UR to mid position
+		#if pickPose == "Handle": # move to scan OLD
 		#	movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0)
 		#elif pickPose == "Head":
 		#	movel(p[0.29273, -0.279.83, 0.59281, 1.2091, -2.9006, -0.0064], a=1.2, v=0.25, r=0)
@@ -389,31 +384,30 @@ def main():
 			movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0)
 		end
 		# After Scanning,
-		movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0)#move above box 1
-		movel(p[0.42785,-0.19928,0.52380,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0)#move in Box 1
+		movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move above box 1
+		movel(p[0.42785,-0.19928,0.52380,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move in Box 1
 		rq_open_and_wait()
-		movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0)#move above box 1
-		
+		movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move above box 1
 		movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) # move to prepick position ready to pick next part
 	end
 	
 	def pickNut(Data)
 		pos = extractPose(Data)
 		pickPose = extractPickPoseAlias(Data)
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))#move above part 10cm
+		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) #move above part 10cm
 		rq_open_and_wait()
 		movel(pos)#move to part
 		rq_close_and_wait()
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))#move part up 10cm
-		movel(p[0.23018, -0.26240, 0.74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0)#move UR to mid position
+		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) #move part up 10cm
+		movel(p[0.23018, -0.26240, 0.74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0) #move UR to mid position
 		#scanning
 		movel(p[0.29606,-0.25806,0.59056,0.3678,-3.1090,-0.0428],a=1.2,v=0.25,r=0) #scan face 1
 		movel(p[0.29606,-0.25806,0.59056,2.0037,-2.4270,-0.0450],a=1.2,v=0.25,r=0) #scan face 2
 		# After Scanning,
-		movel(p[0.12948, -0.48141, 0.54567, 1.1592, -2.9149, 0.0332]a=1.2,v=0.25,r=0)#move above box 3
-		movel(p[0.12948, -0.48141, 0.53012, 1.1592, -2.9149, 0.0332]a=1.2,v=0.25,r=0)#move in box 3
+		movel(p[0.12948, -0.48141, 0.54567, 1.1592, -2.9149, 0.0332]a=1.2,v=0.25,r=0) #move above box 3
+		movel(p[0.12948, -0.48141, 0.53012, 1.1592, -2.9149, 0.0332]a=1.2,v=0.25,r=0) #move in box 3
 		rq_open_and_wait()
-		movel(p[0.12948, -0.48141, 0.54567, 1.1592, -2.9149, 0.0332]a=1.2,v=0.25,r=0)#move above box 3
+		movel(p[0.12948, -0.48141, 0.54567, 1.1592, -2.9149, 0.0332]a=1.2,v=0.25,r=0) #move above box 3
 		
 		movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) # move to prepick position ready to pick next part
 		
@@ -439,7 +433,7 @@ def main():
 			movel(p[0.339, -0.28097, 0.62956, 0.6105, 1.4705, -0.5992], a=1.2, v=0.25, r=0)#scanning for left leg
 		# After Scanning,
 			movel(p[0.339, -0.28097, 0.67956, 0.6105, 1.4705, -0.5992], a=1.2, v=0.25, r=0)#clear scanning area 
-			#Required additional waypoint
+			#TODO: Required additional waypoint
 			movel(p[0.34370, -.29185, .66648, 1.0270, -2.7156, 2.3110],a=1.2,v=0.25,r=0)#move higher above scanning
 			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2 for left
 			movel(p[0.23735,-0.35100,0.5260,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move in box 2 for left
