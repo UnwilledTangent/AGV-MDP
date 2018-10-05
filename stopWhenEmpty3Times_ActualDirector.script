@@ -377,12 +377,15 @@ def main():
 		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))
 		# move UR to mid position
 		movel(p[.23018, -.26240, .74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0)
-		# move to scan
-		if pickPose == "Handle":
-			movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0)
-		elif pickPose == "Head":
-			movel(p[0.29273, -0.279.83, 0.59281, 1.2091, -2.9006, -0.0064], a=1.2, v=0.25, r=0)
-		elif pickPose == "Tail":
+		# move to scan OLD
+		#if pickPose == "Handle":
+		#	movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0)
+		#elif pickPose == "Head":
+		#	movel(p[0.29273, -0.279.83, 0.59281, 1.2091, -2.9006, -0.0064], a=1.2, v=0.25, r=0)
+		#elif pickPose == "Tail":
+		#	movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0)
+		#end
+		if pickPose == "Handle" or "Head" or "Tail": # move to scan NEW
 			movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0)
 		end
 		# After Scanning,
@@ -403,6 +406,7 @@ def main():
 		rq_close_and_wait()
 		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))#move part up 10cm
 		movel(p[0.23018, -0.26240, 0.74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0)#move UR to mid position
+		#scanning
 		movel(p[0.29606,-0.25806,0.59056,0.3678,-3.1090,-0.0428],a=1.2,v=0.25,r=0) #scan face 1
 		movel(p[0.29606,-0.25806,0.59056,2.0037,-2.4270,-0.0450],a=1.2,v=0.25,r=0) #scan face 2
 		# After Scanning,
