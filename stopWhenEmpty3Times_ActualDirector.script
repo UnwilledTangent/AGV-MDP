@@ -365,14 +365,26 @@ def main():
 	end
 
 	def pickConrod(Data)
-		pos = extractPose(Data)
-		pickPose = extractPickPoseAlias(Data)
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) # move above object 10cm
+		#pos = extractPose(Data)
+		#pickPose = extractPickPoseAlias(Data)
+		#movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) # move above object 10cm
+		movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) #move to prepick position ready to pick next part
 		rq_open_and_wait()
-		movel(pos) # move to object
+		#Move to object
+		movel(p[-0.30148,-0.57945,0.30613,1.1484,2.9445,-0.0095], a=1.2,v=0.25,r=0) #above conrod
+		movel(p[-0.30148,-0.57945,0.20812,1.1484,2.9445,-0.0095], a=1.2,v=0.25,r=0) #into conrod
 		rq_close_and_wait()
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) # move part up 10cm
+		movel(p[-0.30148,-0.57945,0.30613,1.1484,2.9445,-0.0095], a=1.2,v=0.25,r=0) #above conrod
 		movel(p[.23018, -.26240, .74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0) # move UR to mid position
+		movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0) #Move to scan position
+		# After Scanning,
+		movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move above box 1
+		movel(p[0.42785,-0.19928,0.52380,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move in Box 1
+		rq_open_and_wait()
+		movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move above box 1
+		
+		movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) # move to prepick position ready to pick next part
+	end
 		#if pickPose == "Handle": # move to scan OLD
 		#	movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0)
 		#elif pickPose == "Head":
@@ -380,25 +392,28 @@ def main():
 		#elif pickPose == "Tail":
 		#	movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0)
 		#end
-		if pickPose == "Handle" or "Head" or "Tail": # move to scan NEW
-			movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0)
-		end
+		#if pickPose == "Handle" or "Head" or "Tail": # move to scan NEW
+			#movel(p[0.27476, -0.25024, 0.59288, 1.2091, -2.9005, -0.0059], a=1.2, v=0.25, r=0)
+		#end
 		# After Scanning,
-		movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move above box 1
-		movel(p[0.42785,-0.19928,0.52380,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move in Box 1
-		rq_open_and_wait()
-		movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move above box 1
-		movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) # move to prepick position ready to pick next part
-	end
+		#movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move above box 1
+		#movel(p[0.42785,-0.19928,0.52380,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move in Box 1
+		#rq_open_and_wait()
+		#movel(p[0.42785,-0.19928,0.55440,2.8722,-1.2544,-0.0351], a=1.2, v=0.25,r=0) #move above box 1
+		#movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) # move to prepick position ready to pick next part
+	#end
 	
 	def pickNut(Data)
-		pos = extractPose(Data)
-		pickPose = extractPickPoseAlias(Data)
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) #move above part 10cm
+		#pos = extractPose(Data)
+		#pickPose = extractPickPoseAlias(Data)
+		#movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) #move above part 10cm
+		movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) #move to prepick position ready to pick next part
 		rq_open_and_wait()
-		movel(pos)#move to part
+		#Move to object
+		movel(p[-0.57934,-0.25120,0.31368,1.1487,2.9446,-0.0097],a=1.2,v=0.25,r=0) # above nut
+		movel(p[-0.57934,-0.25120,0.21040,1.1487,2.9446,-0.0097],a=1.2,v=0.25,r=0) # into nut
 		rq_close_and_wait()
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) #move part up 10cm
+		movel(p[-0.57934,-0.25120,0.31368,1.1487,2.9446,-0.0097],a=1.2,v=0.25,r=0) # above nut
 		movel(p[0.23018, -0.26240, 0.74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0) #move UR to mid position
 		#scanning
 		movel(p[0.29606,-0.25806,0.59056,0.3678,-3.1090,-0.0428],a=1.2,v=0.25,r=0) #scan face 1
@@ -408,56 +423,33 @@ def main():
 		movel(p[0.12948, -0.48141, 0.53012, 1.1592, -2.9149, 0.0332]a=1.2,v=0.25,r=0) #move in box 3
 		rq_open_and_wait()
 		movel(p[0.12948, -0.48141, 0.54567, 1.1592, -2.9149, 0.0332]a=1.2,v=0.25,r=0) #move above box 3
-		
+		#movel(pos)#move to part
+		#movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) #move part up 10cm
+			
 		movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) # move to prepick position ready to pick next part
 		
 	end
 	
 	def pickTopFrame(Data):
-		pos = extractPose(Data)
-		pickPose = extractPickPoseAlias(Data)
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))#move above part 10cm
+		#pos = extractPose(Data)
+		#pickPose = extractPickPoseAlias(Data)
+		#movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))#move above part 10cm
+		movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) #move to prepick position ready to pick next part
 		rq_open_and_wait()
-		movel(pos)#move to part
+		#move to part
+		movel(p[-0.40878, -0.38707, 0.30534, 1.1094, -2.9198, -0.0131], a=1.2,v=0.25,r=0) # Above top_frame
+		movel(p[-0.40878, -0.38707, 0.20619, 1.1094, -2.9198, -0.0131], a=1.2,v=0.25,r=0) # into top_frame
 		rq_close_and_wait()
-		movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))#move above part 10cm
-		movel(p[0.23018, -0.26240, 0.74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0)#move UR to mid position
-		if pickPose == "Mid": #move to scan and sort
-			movel(p[0.32079,-0.28833,0.62955,1.7571,-0.7068,1.7679], a=1.2, v=0.25, r=0)#scan for mid pickup
-		# After Scanning,
-			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2 for mid
-			movel(p[0.23735,-0.35100,0.5260,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move in box 2 for mid
-			rq_open_and_wait()
-			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2 for mid
-		elif pickPose == "Left": #move to scan and sort
-			movel(p[0.339, -0.28097, 0.62956, 0.6105, 1.4705, -0.5992], a=1.2, v=0.25, r=0)#scanning for left leg
-		# After Scanning,
-			movel(p[0.339, -0.28097, 0.67956, 0.6105, 1.4705, -0.5992], a=1.2, v=0.25, r=0)#clear scanning area 
-			#TODO: Required additional waypoint
-			movel(p[0.34370, -.29185, .66648, 1.0270, -2.7156, 2.3110],a=1.2,v=0.25,r=0)#move higher above scanning
-			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2 for left
-			movel(p[0.23735,-0.35100,0.5260,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move in box 2 for left
-			rq_open_and_wait()
-			movel(p[0.23735,-0.35100,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2 for left
-			
-		elif pickPose == "Right": #move to scan and sort
-			movel(p[0.28870, -0.29090, 0.62955, 1.7570, -0.7069, 1.7678], a=1.2, v=0.25, r=0)#Scanning for right leg , needs to change again
-			#no need to clear scanning area
-		# After Scanning,			
-			movel(p[0.24444,-0.36368,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2 for right
-			movel(p[0.24453,-0.36370,0.53270,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move in box 2 for right
-			rq_close_and_wait
-			movel(p[0.24444,-0.36368,0.5560,2.8702,-1.2407,-0.0799],a=1.2,v=0.25,r=0)#move above box 2
-		elif pickPose=="Front":
-			movel(p[0.33030,-0.26143,0.63952,1.1070,-2.4184,2.5090],a=1.2,v=0.25,r=0)#scanning for front
-		# After Scanning,
-			movel(p[0.33030,-0.26143,0.63952,1.1070,-2.4184,2.5090],a=1.2,v=0.25,r=0)#clear scanning area
-			movel(p[0.2795,-0.32390,0.55565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#move above box 2 for front
-			movel(p[0.2795,-0.32390,0.52565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#move in box 2 for front
-			rq_open_and_wait
-			movel(p[0.2795,-0.32390,0.55565,2.8702,-1.2405,-0.0796],a=1.2,v=0.25,r=0)#move above box 2 for front
+		movel(p[-0.40878, -0.38707, 0.30534, 1.1094, -2.9198, -0.0131], a=1.2,v=0.25,r=0) # Above top_frame
+		movel(p[0.23018, -0.26240, 0.74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0) #move UR to mid position
+		movel(p[0.29850, -0.25345, 0.64045, 1.8720, -0.7935, 1.7012], a=1.2, v=0.25, r=0) #Move to scan position
+		#After Scanning
+		movel(p[0.23733, -0.35091, 0.55602, 2.8720, -1.2410, -0.008], a=1.2, v=0.25, r=0) #Above box2
+		movel(p[0.23733, -0.35091, 0.52639, 2.8720, -1.2410, -0.008], a=1.2, v=0.25, r=0) #into box2
+		rq_open_and_wait()
+		movel(p[0.23733, -0.35091, 0.55602, 2.8720, -1.2410, -0.008], a=1.2, v=0.25, r=0) #Above box2
+		#movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0]))#move above part 10cm
 
-		end
 		movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) # move to prepick position ready to pick next part
 	end
 	
