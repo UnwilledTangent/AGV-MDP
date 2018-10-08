@@ -364,7 +364,7 @@ def main():
 		end
 	end
 
-	def pickConrod(Data)
+	def pickConrod(Data):
 		#pos = extractPose(Data)
 		#pickPose = extractPickPoseAlias(Data)
 		#movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) # move above object 10cm
@@ -403,7 +403,7 @@ def main():
 		#movel(p[-0.03499,-0.18562,0.53755,1.1418,-2.8645,-0.0241], a=1.2,v=0.25,r=0) # move to prepick position ready to pick next part
 	#end
 	
-	def pickNut(Data)
+	def pickNut(Data):
 		#pos = extractPose(Data)
 		#pickPose = extractPickPoseAlias(Data)
 		#movel(pose_trans(pos, p[0, 0, -0.100, 0, 0, 0])) #move above part 10cm
@@ -470,7 +470,7 @@ def main():
 		return x
 	end
 	
-	def extractPickPoseAlias(partData)
+	def extractPickPoseAlias(partData):
 		return partData[23]
 	end
 		
