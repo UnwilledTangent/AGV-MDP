@@ -399,11 +399,11 @@ def main():
 		#movel(p[0.23018, -0.26240, 0.74540, 3.0519, 2.4294, -3.1615], a=1.2, v=0.25, r=0) #move UR to mid position
 		movel(p[0.24561, -0.22784, 0.68705, 2.7501, 3.035, -2.9913], a=1.2, v=0.25, r=0) #move UR to NEW mid position
 		#move to scan
-		if pickPose == 1: #handle scanning position
+		if pickPose == "Handle":
 			movel(p[0.27476, -0.25024, 0.59288, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)
-		elif pickPose == 2: #head scanning position
+		elif pickPose == "Head":
 			movel(p[0.29273, -0.27983, 0.59281, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)# needs Double check
-		elif pickPose == 3: # tail scanning position
+		elif pickPose == "Tail":
 			movel(p[0.27476, -0.25024, 0.59288, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)
 		else:
 			popup(pickPose,"pickPose is",False,True,blocking=True)
