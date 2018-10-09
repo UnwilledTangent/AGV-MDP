@@ -396,7 +396,8 @@ def main():
 		rq_close_and_wait()
 		movel(pose_trans(pos, p[0, 0, 0.100, 0, 0, -1.571])) #move above part 10cm
 		#movel(p[.23018, -.26240, .74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0) #move UR to mid position
-		movel(p[0.23018, -0.26240, 0.74540, 3.0519, 2.4294, -3.1615], a=1.2, v=0.25, r=0) #move UR to mid position
+		#movel(p[0.23018, -0.26240, 0.74540, 3.0519, 2.4294, -3.1615], a=1.2, v=0.25, r=0) #move UR to mid position
+		movel(p[0.24561, -0.22784, 0.68705, 2.7501, 3.035, -2.9913], a=1.2, v=0.25, r=0) #move UR to NEW mid position
 		#move to scan
 		if pickPose == "Handle":
 			movel(p[0.27476, -0.25024, 0.59288, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)
@@ -426,7 +427,8 @@ def main():
 		rq_close_and_wait()
 		movel(pose_trans(pos, p[0, 0, 0.100, 0, 0, 0])) #move part up 10cm
 		#movel(p[0.23018, -0.26240, 0.74540, 1.4397, -3.1345, 1.3923], a=1.2, v=0.25, r=0) #move UR to mid position
-		movel(p[0.23018, -0.26240, 0.74540, 3.0519, 2.4294, -3.1615], a=1.2, v=0.25, r=0) #move UR to mid position
+		#movel(p[0.23018, -0.26240, 0.74540, 3.0519, 2.4294, -3.1615], a=1.2, v=0.25, r=0) #move UR to mid position
+		movel(p[0.24561, -0.22784, 0.68705, 2.7501, 3.035, -2.9913], a=1.2, v=0.25, r=0) #move UR to NEW mid position
 		movel(p[0.29603,-0.25809,0.59056,0.0278,0.0091,0.2355],a=1.2,v=0.25,r=0) #scan face 1
 		movel(p[0.29603,-0.25809,0.59056,0.0321,0.0079,1.3805],a=1.2,v=0.25,r=0) #scan face 2
 		#After Scanning,
