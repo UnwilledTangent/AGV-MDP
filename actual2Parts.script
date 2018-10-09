@@ -406,6 +406,7 @@ def main():
 			movel(p[0.27476, -0.25024, 0.59288, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)
 		else:
 			popup(pickPose,"pickPose is",False,True,blocking=True)
+			movel(p[0.27476, -0.25024, 0.59288, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)
 		end
 		#After Scanning,
 		movel(p[0.42785,-0.19928,0.55440,0.0300, 0.0088, 2.3181], a=1.2, v=0.25,r=0) #move above box 1
