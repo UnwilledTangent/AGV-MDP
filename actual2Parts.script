@@ -364,7 +364,7 @@ def main():
 		end
 	end
 
-	def pickConrod(Data)
+	def pickConrod(Data):
 		pos = extractPose(Data)
 		pickPose = extractPickPoseAlias(Data)
 		movel(pose_trans(pos, p[0, 0, 0.100, 3.141, 0, 0])) #move above part 10cm
@@ -378,7 +378,7 @@ def main():
 		if pickPose == "Handle":
 			movel(p[0.27476, -0.25024, 0.59288, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)
 		elif pickPose == "Head":
-			movel(p[0.29273, -0.279.83, 0.59281, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)# needs Double check
+			movel(p[0.29273, -0.27983, 0.59281, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)# needs Double check
 		elif pickPose == "Tail":
 			movel(p[0.27476, -0.25024, 0.59288, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)
 		end
@@ -391,7 +391,7 @@ def main():
 		movel(p[-0.03502,-0.18560,0.53758,0.0165,0.0583,0.7586], a=1.2, v=0.25,r=0) #move to prepick position ready to pick next part
 	end
 	
-	def pickNut(Data)
+	def pickNut(Data):
 		pos = extractPose(Data)
 		pickPose = extractPickPoseAlias(Data)
 		movel(pose_trans(pos, p[0, 0, 0.100, 3.141, 0, 0])) #move above part 10cm
@@ -473,7 +473,7 @@ def main():
 		return x
 	end
 	
-	def extractPickPoseAlias(partData)
+	def extractPickPoseAlias(partData):
 		return partData[23]
 	end
 		
@@ -494,7 +494,7 @@ def main():
 			zlist = zListSort(zlist)
 			if zlist[0] == 0 and zlist[1] == 0:
 				scancounter = scancounter + 1
-			else
+			else:
 				if zlist[0] == 0:
 					pass
 				elif zlist[0] == pos1[2]:
