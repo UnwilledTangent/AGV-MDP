@@ -459,18 +459,10 @@ def main():
 	end
 	
 	def zListSort(x):
-		if x[0] > x[1] and x[1] > x[2] and x[0] > x[2]:
-			x = [x[0], x[1], x[2]]
-		elif x[0] > x[2] and x[2] > x[1] and x[0] > x[1]:
-			x = [x[0], x[2], x[1]]
-		elif x[1] > x[0] and x[0] > x[2] and x[1] > x[2]:
-			x = [x[1], x[0], x[2]]
-		elif x[1] > x[2] and x[2] > x[0] and x[1] > x[0]:
-			x = [x[1], x[2], x[0]]
-		elif x[2] > x[0] and x[0] > x[1] and x[2] > x[1]:
-			x = [x[2], x[0], x[1]]
-		elif x[2] > x[1] and x[1] > x[0] and x[2] > x[0]:
-			x = [x[2], x[1], x[0]]
+		if x[0] > x[1]:
+			x = [x[0], x[1]]
+		else:
+			x = [x[1], x[0]]
 		end
 		return x
 	end
@@ -492,11 +484,9 @@ def main():
 			pos1 = extractPose(partData1)
 			partData2 = LocatePart("Conrod")
 			pos2 = extractPose(partData2)
-			partData3 = LocatePart("TopFrame")
-			pos3 = extractPose(partData3)
-			zlist = [pos1[2], pos2[2], pos3[2]]
+			zlist = [pos1[2], pos2[2]]
 			zlist = zListSort(zlist)
-			if zlist[0] == 0 and zlist[1] == 0 and zlist[2] == 0:
+			if zlist[0] == 0 and zlist[1] == 0:
 				scancounter = scancounter + 1
 			else
 				if zlist[0] == 0:
@@ -505,8 +495,6 @@ def main():
 					pickNut(partData1)
 				elif zlist[0] == pos2[2]:
 					pickConrod(partData2)
-				elif zlist[0] == pos3[2]:
-					pickTopFrame(partData3)
 				end
 				if zlist[1] == 0:
 					pass
@@ -514,17 +502,6 @@ def main():
 					pickNut(partData1)
 				elif zlist[1] == pos2[2]:
 					pickConrod(partData2)
-				elif zlist[1] == pos3[2]:
-					pickTopFrame(partData3)
-				end
-				if zlist[2] == 0:
-					pass
-				elif zlist[2] == pos1[2]:
-					pickNut(partData1)
-				elif zlist[2] == pos2[2]:
-					pickConrod(partData2)
-				elif zlist[2] == pos3[2]:
-					pickTopFrame(partData3)
 				end
 			end
 		end
