@@ -116,11 +116,13 @@ def main():
     if receivedPartMsg[1]!=3:
       popup("Expected Part message,Received Wrong type")     
     end
-    if receivedPartMsg[2]==111 or receivedPartMsg[2]==112 or receivedPartMsg[2]==113 or receivedPartMsg[2]==114: 	 	
-		#pass
-	elif receivedPartMsg[2]!=0 and receivedPartMsg[2]!=3: #if result not OK and not a license error
-      errorHandler(receivedPartMsg[1])
-       halt
+	if receivedPartMsg[2]==111 or receivedPartMsg[2]==112 or receivedPartMsg[2]==113 or receivedPartMsg[2]==114:
+		receivedPartMsg[23]=0
+	end
+		
+	if receivedPartMsg[2]!=0 and receivedPartMsg[2]!=3 and receivedPartMsg[2]!=111 and receivedPartMsg[2]!=112 and receivedPartMsg[2]!=113 and receivedPartMsg[2]!=114: #if result not OK and not a license error
+		errorHandler(receivedPartMsg[2])
+		halt
     end
   
     
@@ -396,7 +398,8 @@ def main():
 		movel(pose_trans(pos, p[0, 0, -0.01, 0, 0, -1.571])) #move above part 10cm
 		rq_close_and_wait()
 		movel(pose_trans(pos, p[0, 0, 0.100, 0, 0, -1.571])) #move above part 10cm
-		movel(p[0.24564, -0.22787, 0.68709, 2.7064, 2.3426, -3.3702], a=1.2, v=0.25, r=0) #move UR to NEW mid position
+		movel((p[-0.02636,-0.18756,0.53613,0.0,0,-5.471],a=1.2,v=0.25,r=0)#rotate wrist 3 into better position
+		movel(p[0.1514,-0.14952,0.58756,0,0,0.75], a=1.2, v=0.25, r=0) #move UR to NEW mid position
 		#move to scan
 		if Data[23] == 1:
 			popup("Pick from handle","Holy crap",False,True,blocking=True)
@@ -417,7 +420,7 @@ def main():
 		rq_open_and_wait()
 		movel(p[0.42785,-0.19928,0.55440,0.0300, 0.0088, 2.3181], a=1.2, v=0.25,r=0) #move above box 1
 		
-		movel(p[-0.03502,-0.18560,0.53758,0.0165,0.0583,0.7586], a=1.2, v=0.25,r=0) #move to prepick position ready to pick next part
+		movel(p[-0.02636,-0.18756,0.53613,0.0,0,-5.471], a=1.2, v=0.25,r=0) #move to prepick position ready to pick next part
 	end
 	
 	def pickNut(Data):
@@ -428,7 +431,7 @@ def main():
 		movel(pose_trans(pos, p[0, 0, -0.015, 0, 0, 0])) #move to part 
 		rq_close_and_wait()
 		movel(pose_trans(pos, p[0, 0, 0.100, 0, 0, 0])) #move part up 10cm
-		movel(p[0.24564, -0.22787, 0.68709, 2.7064, 2.3426, -3.3702], a=1.2, v=0.25, r=0) #move UR to NEW mid position
+		movel(p[-0.02636,-0.18756,0.53613,0,0,-5.471], a=1.2, v=0.25,r=0) #move UR to NEW mid position
 		movel(p[0.29603,-0.25809,0.59056,0.0278,0.0091,0.2355],a=1.2,v=0.25,r=0) #scan face 1
 		movel(p[0.29603,-0.25809,0.59056,0.0321,0.0079,1.3805],a=1.2,v=0.25,r=0) #scan face 2
 		#After Scanning,
@@ -436,8 +439,7 @@ def main():
 		movel(p[0.12948, -0.48141, 0.51567, 0.1528, -0.0212, -5.5231],a=1.2,v=0.25,r=0) #move in box 3
 		rq_open_and_wait()
 		movel(p[0.12948, -0.48141, 0.54567, 0.1528, -0.0212, -5.5231],a=1.2,v=0.25,r=0) #move above box 3
-		
-		movel(p[-0.03502,-0.18560,0.53758,0.0165,0.0583,0.7586], a=1.2, v=0.25,r=0) #move to prepick position ready to pick next part
+		movel(p[-0.02636,-0.18756,0.53613,0,0,-5.471], a=1.2, v=0.25,r=0) #move to prepick position ready to pick next part
 		
 	end  
 	
@@ -475,20 +477,25 @@ def main():
         if zlist[0] == 0:
           #pass
         elif zlist[0] == pos1[2]:
+		  scancounter=0
           pickNut(NutInfo)
         elif zlist[0] == pos2[2]:
+		  scancounter=0
           pickConrod(ConrodInfo)
         end
         if zlist[1] == 0:
           #pass
         elif zlist[1] == pos1[2]:
+		  scancounter=0
           pickNut(NutInfo)
         elif zlist[1] == pos2[2]:
+		  scancounter=0
           pickConrod(ConrodInfo)
         end
       end
     end
 	popup("Bin is empty","Holy crap",False,True,blocking=True)
+	scancounter=0
   end
 end
 
