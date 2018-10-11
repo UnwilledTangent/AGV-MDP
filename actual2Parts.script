@@ -388,11 +388,14 @@ def main():
 		movel(p[0.1514,-0.14952,0.58756,0,0,0.75], a=1.2, v=0.25, r=0) #move UR to NEW mid position
 		#move to scan
 		if Data[23] == 1:
-			movel(p[0.27476, -0.25024, 0.59288, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)
+			movel(p[0.29844, -0.23920, 0.60094, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)
+			popup("Scanning","Please check if the phone scanner can scan the Barcode",False,True,blocking=True)
 		elif Data[23] == 2:
 			movel(p[0.29273, -0.27983, 0.59281, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)# needs Double check
+			popup("Scanning","Please check if the phone scanner can scan the Barcode",False,True,blocking=True)
 		elif Data[23] == 3:
-			movel(p[0.27476, -0.25024, 0.59288, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)
+			movel(p[0.30630, -0.24960, 0.59438, 0.7098, 0.1742, -5.4385], a=1.2, v=0.25, r=0)
+			popup("Scanning","Please check if the phone scanner can scan the Barcode",False,True,blocking=True)
 		else:
 			popup("unidentified","pickPose is",False,True,blocking=True)
 			movel(p[0.27476, -0.25024, 0.59288, 0.0045, -0.0019, 0.7898], a=1.2, v=0.25, r=0)
