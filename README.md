@@ -10,8 +10,7 @@ This project is worked on by many Singapore Polytechnic students and lecturers.
 * Jackie Soh
 * Sean Tin
 ## Supervisors
-* Dr Carlos
-* Mr Ock Jin
-* Mr Ong Hock San
+* Dr Carlos Acosta
+* Mr Chung Ock Jin
 ## License
 [MIT](./LICENSE)
