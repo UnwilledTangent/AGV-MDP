@@ -1,0 +1,7 @@
+UR5 Script via Socket Connection
+
+http://www.zacobria.com/universal-robots-zacobria-forum-hints-tips-how-to/script-via-socket-connection/
+
+UR5 DashBoard server
+
+https://www.universal-robots.com/how-tos-and-faqs/how-to/ur-how-tos/dashboard-server-cb-series-port-29999-15690/
