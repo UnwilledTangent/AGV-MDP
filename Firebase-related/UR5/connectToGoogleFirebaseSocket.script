@@ -1,0 +1,15 @@
+Connected = False
+counter=0
+
+while not Connected and (counter<5):
+	Connected=socket_open("192.168.0.5", 13000, "Google_Firebase_Socket")
+	counter=counter+1
+end
+if counter>=5:
+	popup("Connection to fireBaseSocket failed","Time out",False,True,blocking=True)
+	halt
+else:
+	popup("Connected to fireBaseSocket","GOOD NEWS",False,False,blocking=True)
+end
+
+socket_send_string("Hello World!", "Google_Firebase_Socket")

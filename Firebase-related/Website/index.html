@@ -1,0 +1,31 @@
+<html>
+<head>
+	<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-firestore.js"></script>
+</head>
+<body>
+	<h1>HMI Display 2, Baby!</h1>
+	<div class="content" id="direction">
+
+	</div>
+
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyCpzcH2tEFLh-LmHosldUxO90c6SU9qo8s",
+			authDomain: "hmi-display-2.firebaseapp.com",
+			databaseURL: "https://hmi-display-2.firebaseio.com",
+			projectId: "hmi-display-2",
+			storageBucket: "hmi-display-2.appspot.com",
+			messagingSenderId: "605297184775"
+		};
+		firebase.initializeApp(config);
+		const db = firebase.firestore();
+
+		// The below statement disables deprecated features
+		db.settings({ timestampsInSnapshots: true })
+	</script>
+
+	<script src="app.js"></script>
+</body>
+</html>
