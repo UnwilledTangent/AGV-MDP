@@ -1,45 +1,61 @@
-//db.collection("UR5").get().then((querySnapshot) => {
-//	querySnapshot.forEach((doc) => {
-//		console.log(`${doc.id} => ${doc.data().direction}`);
-//	});
-//});
+// direction facing
+const displayUR5Div = document.querySelector('#URinfo');
 
-const displayUR5Info = document.querySelector('#URinfo');
-let directionHeader = document.createElement('h2');
-let loadedProgramHeader = document.createElement('h2');
-let programStateHeader = document.createElement('h2');
+// loaded program
+const loadedProgramDiv = document.querySelector('#loadedProgramInfo');
 
+// program status
+const programStatusDiv = document.querySelector('#programStatusInfo');
 
+// conrods picked
+const conrodsPickedDiv = document.querySelector('#conrodsPicked');
+
+// nuts picked
+const nutsPickedDiv = document.querySelector('#nutsPicked');
+
+// create elements to receive data from Google Firebase
+let directionHeader = document.createElement('h4');
+let loadedProgramHeader = document.createElement('h4');
+let programStateHeader = document.createElement('h4');
+let conrodsPickedHeader = document.createElement('h4');
+let nutsPickedHeader = document.createElement('h4');
+
+// get document reference to Google Firebase
 var positionDocRef = db.collection("UR5").doc("position");
 var loadedProgramDocRef = db.collection("UR5").doc("loadedProgram");
 var programStateDocRef = db.collection("UR5").doc("programState");
+var itemCountDocRef = db.collection("UR5").doc("itemCount");
 
-// Reads the Firebase server once
-//docRef.get().then(function (doc) {
-//	if (doc.exists) {
-//		directionHeader.textContent = "UR5 is facing: " + doc.data().direction;
-//		displayDirection.appendChild(directionHeader);
-//	} else {
-//		// doc.data() will be undefined in this case
-//		console.log("No such document");
-//	}
-//})
+// add header3 class
+directionHeader.classList.add('header3');
+loadedProgramHeader.classList.add('header3');
+programStateHeader.classList.add('header3');
+conrodsPickedHeader.classList.add('header3');
+nutsPickedHeader.classList.add('header3');
 
 // Listens to the Firebase server constantly for updates
 positionDocRef
 	.onSnapshot(function (doc) {
-		directionHeader.textContent = "UR5 is facing: " + doc.data().direction;
-		displayUR5Info.appendChild(directionHeader);
+		directionHeader.textContent = doc.data().direction;
+		displayUR5Div.appendChild(directionHeader);
 	});
 
 loadedProgramDocRef
 	.onSnapshot(function (doc) {
 		loadedProgramHeader.textContent = doc.data().loadedProgram;
-		displayUR5Info.appendChild(loadedProgramHeader);
+		loadedProgramDiv.appendChild(loadedProgramHeader);
 	});
 
 programStateDocRef
 	.onSnapshot(function (doc) {
 		programStateHeader.textContent = doc.data().programState;
-		displayUR5Info.appendChild(programStateHeader);
+		programStatusDiv.appendChild(programStateHeader);
+	});
+
+itemCountDocRef
+	.onSnapshot(function (doc) {
+		conrodsPickedHeader.textContent = doc.data().conrodCount;
+		nutsPickedHeader.textContent = doc.data().nutCount;
+		conrodsPickedDiv.appendChild(conrodsPickedHeader);
+		nutsPickedDiv.appendChild(nutsPickedHeader);
 	});
