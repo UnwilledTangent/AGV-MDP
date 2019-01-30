@@ -17,8 +17,8 @@ const nutsPickedDiv = document.querySelector('#nutsPicked');
 let directionHeader = document.createElement('h4');
 let loadedProgramHeader = document.createElement('h4');
 let programStateHeader = document.createElement('h4');
-let conrodsPickedHeader = document.createElement('h4');
-let nutsPickedHeader = document.createElement('h4');
+let conrodsPickedHeader = document.createElement('h1');
+let nutsPickedHeader = document.createElement('h1');
 
 // get document reference to Google Firebase
 var positionDocRef = db.collection("UR5").doc("position");
