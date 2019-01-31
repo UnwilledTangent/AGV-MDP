@@ -21,6 +21,7 @@ firebase_admin.initialize_app(cred)
 dataBase = firestore.client()
 print("Connected to Google Firebase")
 UR5ItemCount = dataBase.collection(u'UR5').document(u'itemCount')
+UR5Status = dataBase.collection(u'UR5').document(u'position')
 
 conrodCount = 0
 nutCount = 0
@@ -32,17 +33,17 @@ while True:
 
     # update Google Firebase with position
     if data == "picking":
-        UR5ItemCount.update({
+        UR5Status.update({
             u'direction': u'Picking',
         })
     elif data == "sorting":
-        UR5ItemCount.update({
+        UR5Status.update({
             u'direction': u'Sorting',
         })
-	elif data == "prepick":
-		UR5ItemCount.update({
-			u'direction': u'Prepick Position',
-	})
+    elif data == "prepick":
+        UR5Status.update({
+            u'direction': u'Prepick Position',
+        })
     elif data == "pickConrod":
         conrodCount = conrodCount + 1
         UR5ItemCount.update({
