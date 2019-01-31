@@ -1,0 +1,72 @@
+﻿<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>HMI Display 2 Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+	<!-- Optional Bootstrap theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+	<!-- Customised Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
+	<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-firestore.js"></script>
+</head>
+<body>
+	<h1 class="header1">HMI Display 2</h1>
+	<div class="container">
+		<div class="row">
+			<div class="redOutline col-xs-12 col-sm-4">
+				<div id="URinfo">
+					<h2 class="header2">UR5 Direction:</h2>
+				</div>
+			</div>
+			<div class="redOutline col-xs-12 col-sm-4">
+				<div id="loadedProgramInfo">
+					<h2 class="header2">Loaded Program:</h2>
+				</div>
+			</div>
+			<div class="redOutline col-xs-12 col-sm-4">
+				<div id="programStatusInfo">
+					<h2 class="header2">Program Status:</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="redOutline col-xs-12 col-sm-6">
+				<div id="conrodsPicked">
+					<h2 class="header2">Conrods Picked:</h2>
+				</div>
+			</div>
+			<div class="redOutline col-xs-12 col-sm-6">
+				<div id="nutsPicked">
+					<h2 class="header2">Nuts Picked:</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyCpzcH2tEFLh-LmHosldUxO90c6SU9qo8s",
+			authDomain: "hmi-display-2.firebaseapp.com",
+			databaseURL: "https://hmi-display-2.firebaseio.com",
+			projectId: "hmi-display-2",
+			storageBucket: "hmi-display-2.appspot.com",
+			messagingSenderId: "605297184775"
+		};
+		firebase.initializeApp(config);
+		const db = firebase.firestore();
+
+		// The below statement disables deprecated features
+		db.settings({ timestampsInSnapshots: true })
+	</script>
+
+	<script src="app.js"></script>
+</body>
+</html>
