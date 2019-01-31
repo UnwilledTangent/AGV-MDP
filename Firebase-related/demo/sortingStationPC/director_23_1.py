@@ -31,14 +31,18 @@ while True:
     print("Data received is " + data)
 
     # update Google Firebase with position
-    if data == "moveLeft":
+    if data == "picking":
         UR5ItemCount.update({
-            u'direction': u'Left',
+            u'direction': u'Picking',
         })
-    elif data == "moveRight":
+    elif data == "sorting":
         UR5ItemCount.update({
-            u'direction': u'Right',
+            u'direction': u'Sorting',
         })
+	elif data == "prepick":
+		UR5ItemCount.update({
+			u'direction': u'Prepick Position',
+	})
     elif data == "pickConrod":
         conrodCount = conrodCount + 1
         UR5ItemCount.update({

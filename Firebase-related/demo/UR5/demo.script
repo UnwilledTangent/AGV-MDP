@@ -394,6 +394,7 @@ def main():
 
 	def pickConrod(Data):
 		socket_send_string("pickConrod", "Google_Firebase_Socket")
+		socket_send_string("picking", "Google_Firebase_Socket")
 		pos = extractPose(Data)
 		movel(pose_trans(pos, p[0, 0, 0.100, 0, 0, -1.571])) #move above part 10cm
 		rq_open_and_wait()
@@ -402,6 +403,7 @@ def main():
 		movel(pose_trans(pos, p[0, 0, 0.100, 0, 0, -1.571])) #move above part 10cm
 		movel(p[-0.02636,-0.18756,0.53613,0.0,0,-5.471],a=1.2,v=0.25,r=0)#rotate wrist 3 into better position
 		movel(p[0.296,-0.07788,0.51146,0.02,0.2,-5.4669], a=1.2, v=0.25, r=0) #move UR to NEW mid position
+		socket_send_string("sorting", "Google_Firebase_Socket")
 		#move to scan
 		if Data[23] == 1: # handle
 			movel(p[0.49791,-0.26048,0.45702,0.0915, 0.1113, -5.4611], a=1.2, v=0.25, r=0)
@@ -422,18 +424,21 @@ def main():
 		movel(p[0.35055,-0.30033,0.46474,0.0922, 0.1109, -5.461], a=1.2, v=0.25,r=0) #move above box 1
 		
 		movel(p[-0.02636,-0.18756,0.53613,0.0,0,-5.471], a=1.2, v=0.25,r=0) #move to prepick position ready to pick next part
+		socket_send_string("prepick", "Google_Firebase_Socket")
 	end
 	
 	def pickNut(Data):
 		socket_send_string("pickNut", "Google_Firebase_Socket")
 		pos = extractPose(Data)
 		pickPose = extractPickPoseAlias(Data)
+		socket_send_string("picking", "Google_Firebase_Socket")
 		movel(pose_trans(pos, p[0, 0, 0.100, 0, 0, 0])) #move above part 10cm
 		rq_open_and_wait()
 		movel(pose_trans(pos, p[0, 0, -0.015, 0, 0, 0])) #move to part 
 		rq_close_and_wait()
 		movel(pose_trans(pos, p[0, 0, 0.100, 0, 0, 0])) #move part up 10cm
 		movel(p[-0.02636,-0.18756,0.53613,0,0,-5.471], a=1.2, v=0.25,r=0) #move UR to NEW mid position
+		socket_send_string("sorting", "Google_Firebase_Socket")
 		movel(p[0.49010,-0.26274,0.45914,0.0644,0.0459,-4.9264],a=1.2,v=0.25,r=0) #scan face 1
 		sleep(0.5)
 		movel(p[0.49010,-0.26274,0.45914,0.1709,0.3277,-5.9927],a=1.2,v=0.25,r=0) #scan face 2
@@ -444,7 +449,7 @@ def main():
 		rq_open_and_wait()
 		movel(p[0.53170, -0.13115, 0.44056, 0.0944, 0.1166, -5.4864],a=1.2,v=0.25,r=0) #move above box 2
 		movel(p[-0.02636,-0.18756,0.53613,0,0,-5.471], a=1.2, v=0.25,r=0) #move to prepick position ready to pick next part
-		
+		socket_send_string("prepick", "Google_Firebase_Socket")
 	end  
 	
 	def zListSort(x):
