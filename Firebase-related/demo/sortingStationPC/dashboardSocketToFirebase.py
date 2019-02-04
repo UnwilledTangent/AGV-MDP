@@ -7,7 +7,7 @@ import socket
 import time
 
 # initialise variables for Dashboard
-UR5Controller = "192.168.0.7"    # IP address pf UR5 Controller
+UR5Controller = "192.168.0.7"    # IP address of UR5 Controller
 DASHBOARD_PORT = 29999  # Port to interface via DashBoard server
 
 # initialise socket for Dashboard

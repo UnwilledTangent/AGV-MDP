@@ -394,8 +394,8 @@ def main():
 
 	def pickConrod(Data):
 		socket_send_string("pickConrod", "Google_Firebase_Socket")
-		socket_send_string("picking", "Google_Firebase_Socket")
 		pos = extractPose(Data)
+		socket_send_string("picking", "Google_Firebase_Socket")
 		movel(pose_trans(pos, p[0, 0, 0.100, 0, 0, -1.571])) #move above part 10cm
 		rq_open_and_wait()
 		movel(pose_trans(pos, p[0, 0, -0.01, 0, 0, -1.571])) #move above part 10cm
